@@ -1,0 +1,30 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "测试版本", HidePremium = false, SaveConfig = true,IntroText = "通用脚本", ConfigFolder = "OrionTest"})
+OrionLib:MakeNotification({
+	Name = "欢迎",
+	Content = "欢迎来到bilisolongcheng脚本制作",
+	Image = "rbxassetid://4483345998",
+	Time = 10
+})
+local Doors = Window:MakeTab({
+	Name = "Doors",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local bgc = Window:MakeTab({
+	Name = "兵工厂",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Doors:AddSection({
+	Name = "测试版本，脚本可能不完整"
+})
+local Section = bgc:AddSection({
+	Name = "测试版本，可能不完整"
+})
+Doors:AddButton({
+	Name = "Doors脚本1号",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
