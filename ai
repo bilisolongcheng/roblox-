@@ -20,11 +20,17 @@ local Section = Doors:AddSection({
 	Name = "测试版本，脚本可能不完整"
 })
 local Section = bgc:AddSection({
-	Name = "测试版本，可能不完整"
+	Name = "测试版本，脚本可能不完整"
 })
 Doors:AddButton({
-	Name = "Doors脚本1号",
+	Name = "Doors脚本1号(msdoors)",
 	Callback = function()
-      		print("button pressed")
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/poopdoors_edited/main/poopdoors_edited.lua"),true))()
+  	end    
+})
+Doors:AddButton({
+	Name = "Doors脚本2号",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Script.lua"))()
   	end    
 })
