@@ -29,7 +29,7 @@ Doors:AddButton({
   	end    
 })
 Doors:AddButton({
-	Name = "Doors脚本2号",
+	Name = "Doors脚本2号(电脑版可用)",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Script.lua"))()
   	end    
