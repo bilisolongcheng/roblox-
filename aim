@@ -35,9 +35,9 @@ Doors:AddButton({
   	end    
 })
 Doors:AddButton({
-	Name = "Doors脚本3号(手机可用)",
+	Name = "Doors－a1000自动走(手机可用)",
 	Callback = function()
-      		
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/a1000"),true))()
         end    
 })
 Doors:AddSlider({
