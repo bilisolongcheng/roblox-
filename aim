@@ -34,3 +34,33 @@ Doors:AddButton({
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Script.lua"))()
   	end    
 })
+Doors:AddButton({
+	Name = "Doors脚本3号(手机可用)",
+	Callback = function()
+      		
+        end    
+})
+Doors:AddSlider({
+	Name = "Slider",
+	Min = 0,
+	Max = 50,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "bananas",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+bgc:AddSlider({
+	Name = "Slider",
+	Min = 0,
+	Max = 50,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "bananas",
+	Callback = function(Value)
+		print(Value)
+	end    
+})
