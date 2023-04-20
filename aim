@@ -33,7 +33,7 @@ local Section = bgc:AddSection({
 rw:AddButton({
 	Name = "飞行",
 	Callback = function()
-      		
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx"),true))()
   	end    
 })
 Doors:AddButton({
