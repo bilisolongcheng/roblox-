@@ -6,6 +6,11 @@ OrionLib:MakeNotification({
 	Image = "rbxassetid://4483345998",
 	Time = 10
 })
+local rw = Window:MakeTab({
+	Name = "主要功能",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 local Doors = Window:MakeTab({
 	Name = "Doors",
 	Icon = "rbxassetid://4483345998",
@@ -19,8 +24,17 @@ local bgc = Window:MakeTab({
 local Section = Doors:AddSection({
 	Name = "完整脚本"
 })
+local Section = rw:AddSection({
+	Name = "人物功能，所有游戏通用"
+})
 local Section = bgc:AddSection({
 	Name = "测试版本，脚本可能不完整"
+})
+rw:AddButton({
+	Name = "飞行",
+	Callback = function()
+      		
+  	end    
 })
 Doors:AddButton({
 	Name = "Doors脚本1号(msdoors)",
@@ -39,28 +53,4 @@ Doors:AddButton({
 	Callback = function()
       		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/a1000"),true))()
         end    
-})
-Doors:AddSlider({
-	Name = "Slider",
-	Min = 0,
-	Max = 50,
-	Default = 5,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "bananas",
-	Callback = function(Value)
-		print(Value)
-	end    
-})
-bgc:AddSlider({
-	Name = "Slider",
-	Min = 0,
-	Max = 50,
-	Default = 5,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "bananas",
-	Callback = function(Value)
-		print(Value)
-	end    
 })
