@@ -30,7 +30,7 @@ local Section = rw:AddSection({
 local Section = bgc:AddSection({
 	Name = "测试版本，脚本可能不完整"
 })
-Tab:AddTextbox({
+rw:AddTextbox({
 	Name = "人物速度",
 	Default = "",
 	TextDisappear = true,
