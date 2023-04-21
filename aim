@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "测试版本1.0", HidePremium = false, SaveConfig = true,IntroText = "通用脚本", ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "通用脚本", HidePremium = false, SaveConfig = true,IntroText = "脚本中心", ConfigFolder = "OrionTest"})
 OrionLib:MakeNotification({
 	Name = "欢迎",
 	Content = "欢迎来到bilisolongcheng脚本制作",
@@ -22,7 +22,7 @@ local bgc = Window:MakeTab({
 	PremiumOnly = false
 })
 local Section = Doors:AddSection({
-	Name = "完整脚本"
+	Name = "可用脚本"
 })
 local Section = rw:AddSection({
 	Name = "人物功能，所有游戏通用"
@@ -137,6 +137,6 @@ local Section = Tap:AddSection({
 local Section = Tap:AddSection({
 	Name = "人物功能提供者QQ:1626509609"
 })
-
+OrionLib:Init()
 
 
