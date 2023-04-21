@@ -32,17 +32,67 @@ local Section = bgc:AddSection({
 })
 rw:AddTextbox({
 	Name = "人物速度",
-	Default = "16",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end	  
+})
+rw:AddTextbox({
+	Name = "跳跃高度",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end
+})
+rw:AddTextbox({
+	Name = "重力",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Workspace.Gravity = Value
+	end
 })
 rw:AddButton({
 	Name = "飞行",
 	Callback = function()
       		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx"),true))()
   	end    
+})
+rw:AddToggle({
+	Name = "踏空",
+	Default = false,
+	Callback = function(Value)
+		Jump = Value
+        game.UserInputService.JumpRequest:Connect(function()
+            if Jump then
+                game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
+            end
+        end)
+	end
+})
+rw:AddToggle({
+	Name = "穿墙",
+	Default = false,
+	Callback = function(Value)
+		Noclip = Value
+		Stepped = game.RunService.Stepped:Connect(function()
+			if Noclip then
+				for a, b in pairs(game.Workspace:GetChildren()) do
+                    if b.Name == game.Players.LocalPlayer.Name then
+                        for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+                            if v:IsA("BasePart") then
+                                v.CanCollide = false
+                            end
+                        end
+                    end
+                end
+			else
+				Stepped:Disconnect()
+			end
+		end)
+	end
 })
 Doors:AddButton({
 	Name = "Doors脚本1号(msdoors)",
@@ -62,3 +112,31 @@ Doors:AddButton({
       		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/a1000"),true))()
         end    
 })
+local Tap = Window:MakeTab({
+	Name = "制作者",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tap:AddSection({
+	Name = "制作者:bili龙城"
+})
+local Section = Tap:AddSection({
+	Name = "提供脚本者:bf"
+})
+local Section = Tap:AddSection({
+	Name = "提供人物功能者:纳西妲"
+})
+
+local Section = Tap:AddSection({
+	Name = "制作者QQ:1719849834"
+})
+local Section = Tap:AddSection({
+	Name = "提供者QQ:1967634077"
+})
+
+local Section = Tap:AddSection({
+	Name = "人物功能提供者QQ:1626509609"
+})
+
+
+
