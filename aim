@@ -137,7 +137,12 @@ ylxx:AddButton({
       		loadstring(game:HttpGet(("https://raw.githubusercontent.com/Drifter0507/scripts/main/westbound"),true))()
   	end    
 })
-
+ylxx:AddButton({
+	Name = "破坏者谜团",
+	Callback = function()
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/Ethanoj1/EclipseMM2/master/Script"),true))()
+  	end     
+})
 local Tap = Window:MakeTab({
 	Name = "制作者",
 	Icon = "rbxassetid://4483345998",
