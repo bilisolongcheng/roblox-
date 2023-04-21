@@ -162,14 +162,19 @@ local Section = Tap:AddSection({
 local Section = Tap:AddSection({
 	Name = "人物功能提供者QQ:1626509609"
 })
-OrionLib:Init()
-Doors:AddDropdown({
-	Name = "下拉",
-	Default = "1",
-	Options = {"1", "2"},
+rw:AddSlider({
+	Name = "Slider",
+	Min = 0,
+	Max = 20,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "bananas",
+        Slider:Set(2)
 	Callback = function(Value)
-		Dropdown:Refresh(List<table>,true)
+		print(Value)
 	end    
 })
+OrionLib:Init()
 
 
