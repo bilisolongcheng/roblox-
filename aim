@@ -32,7 +32,7 @@ local Section = bgc:AddSection({
 })
 rw:AddTextbox({
 	Name = "人物速度",
-	Default = "0",
+	Default = "16",
 	TextDisappear = true,
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
