@@ -22,6 +22,11 @@ local phzmt = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+local 3008 = Window:MakeTab({
+	Name = "SCP 3008",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 local rzcq = Window:MakeTab({
 	Name = "忍者传奇",
 	Icon = "rbxassetid://4483345998",
@@ -166,6 +171,12 @@ phzmt:AddButton({
 	Name = "阿龙脚本（电脑版/手机版）（中文）",
 	Callback = function()
       		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/phzmt"),true))()
+  	end    
+})
+3008:AddButton({
+	Name = "脚本1号(电脑版/手机版)(中文)",
+	Callback = function()
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/3008"),true))()
   	end    
 })
 rzcq:AddButton({
