@@ -214,7 +214,7 @@ local Section = Tap:AddSection({
 })
 
 local Section = Tap:AddSection({
-	Name = "人物功能提供者QQ:1626509609"
+	Name = "人物提供者QQ:1626509609"
 })
 OrionLib:Init()
 
