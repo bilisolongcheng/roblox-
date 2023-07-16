@@ -74,6 +74,20 @@ rw:AddButton({
       		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx"),true))()
   	end    
 })
+
+rw:AddButton({
+	Name = "飞行2.0",
+	Callback = function()
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx2.0"),true))()
+  	end    
+})
+
+rw:AddButton({
+	Name = "飞行",
+	Callback = function()
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx"),true))()
+  	end    
+})
 rw:AddToggle({
 	Name = "踏空",
 	Default = false,
