@@ -1,0 +1,4 @@
+local Window = OrionLib:MakeWindow({Name = "ASX bate", HidePremium = false, SaveConfig = true,IntroText = "😀欢迎 测试员😀", ConfigFolder = "123456"})
+local Tab = Window:MakeTab({    Name = "a1",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
+Tab:AddButton({	Name = "测试1号",	Callback = function()
+end})
