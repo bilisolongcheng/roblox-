@@ -55,11 +55,9 @@ end)
 
 A2:AddButton({
 	Name = "读取坐标",
-	Callback = function()
-      		
-  	end    
+	Callback = function()     		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/a1000"),true))()
+     end
 })
-
 
 
 OrionLib:Init()
