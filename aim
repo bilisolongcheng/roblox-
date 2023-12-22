@@ -12,12 +12,19 @@ local A1 = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+
+
 A1:AddButton({
 	Name = "飞行",
 	Callback = function()
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx"),true))()
   	end    
 })
-
+A1:AddButton({
+	Name = "透视",
+	Callback = function()  loadstring(game:GetObjects("rbxassetid://10092697033")[1].Source)()	
+  	end    
+})
 
 OrionLib:Init()
