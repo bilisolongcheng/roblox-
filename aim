@@ -25,4 +25,29 @@ loadstring(game:GetObjects("rbxassetid://10092697033")[1].Source)()
   	end    
 })
 
+
+A1:AddToggle({
+	Name = "穿墙",
+	Default = false,
+	Callback = function(Value)
+		local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local Clipon = true
+
+Stepped = game:GetService("RunService").Stepped:Connect(function()
+	if not Clipon == false then
+		for a, b in pairs(Workspace:GetChildren()) do
+        if b.Name == Players.LocalPlayer.Name then
+        for i, v in pairs(Workspace[Players.LocalPlayer.Name]:GetChildren()) do
+        if v:IsA("BasePart") then
+        v.CanCollide = false
+        end end end end
+	else
+		Stepped:Disconnect()
+	end
+end)
+	end    
+})
+
+
 OrionLib:Init()
