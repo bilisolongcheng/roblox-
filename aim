@@ -13,7 +13,7 @@ local A1 = Window:MakeTab({
 	PremiumOnly = false
 })
 local A2 = Window:MakeTab({
-	Name = "开发者功能",
+	Name = "刀刃球",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -47,11 +47,16 @@ end)
 })
 
 A2:AddButton({
-	Name = "读取坐标",
+	Name = "主推脚本redz",
 	Callback = function()    
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/a1000"),true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/redz9999"))()loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/redz9999"))()
         end
 })
-
+A2:AddButton({
+	Name = "脚本2号",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/autoparry.lua"))()
+  	end    
+})
 
 OrionLib:Init()
