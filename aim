@@ -20,8 +20,6 @@ local A2 = Window:MakeTab({
 local A3 = Window:MakeTab({    Name = "逃脱",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A4 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 
-Tab:AddSlider({	Name = "速度",	Min = 16,	Max = 200,	Default = 16,	Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end    })
-Tab:AddSlider({	Name = "跳跃高度",	Min = 50,	Max = 200,	Default = 50,	Color = Color3.fromRGB(255,255,255),	Increment = 1,	ValueName = "数值",	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end    })
 Tab:AddTextbox({	Name = "跳跃高度设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end})
 Tab:AddTextbox({	Name = "移动速度设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value	end})
 Tab:AddTextbox({	Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
@@ -38,22 +36,13 @@ Tab:AddButton({	Name = "防止掉线（反挂机）",	Callback = function()	prin
 Tab:AddButton({	Name = "透视",	Callback = function()     loadstring(game:HttpGet('https://pastebin.com/raw/MA8jhPWT'))()  	end    })
 Tab:AddButton({	Name = "吸取全部玩家",	Callback = function()     loadstring(game:HttpGet('https://pastebin.com/raw/hQSBGsw2'))()  	end    })
 Tab:AddButton({	Name = "人物无敌",	Callback = function()     loadstring(game:HttpGet('https://pastebin.com/raw/H3RLCWWZ'))()	end    })
-Tab:AddButton({	Name = "隐身(E)",	Callback = function()	 loadstring(game:HttpGet('https://pastebin.com/raw/nwGEvkez'))()  	end    
-})
-Tab:AddButton({	Name = "电脑键盘",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()  	end   
-})
-Tab:AddButton({	Name = "飞车(E)(别人看到)",	Callback = function()     loadstring(game:HttpGet("https://pastebin.com/raw/G3GnBCyC", true))()  	end   
-})
-Tab:AddTextbox({	Name = "跳跃高度",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end	 
-})
-Tab:AddTextbox({	Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end
-})
-Tab:AddToggle({	Name = "穿墙2",	Default = false,	Callback = function(Value)		if Value then		    Noclip = true		    Stepped = game.RunService.Stepped:Connect(function()			    if Noclip == true then				    for a, b in pairs(game.Workspace:GetChildren()) do                        if b.Name == game.Players.LocalPlayer.Name then                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do                                if v:IsA("BasePart") then                                    v.CanCollide = false                                end                            end                        end                    end			    else				    Stepped:Disconnect()			    end		    end)	    else		    Noclip = false	    end	
-end
-})
-Tab:AddToggle({	Name = "夜视",	Default = false,	Callback = function(Value)		if Value then		    game.Lighting.Ambient = Color3.new(1, 1, 1)		else		    game.Lighting.Ambient = Color3.new(0, 0, 0)		end	
-end
-})
+Tab:AddButton({	Name = "隐身(E)",	Callback = function()	 loadstring(game:HttpGet('https://pastebin.com/raw/nwGEvkez'))()  	end    })
+Tab:AddButton({	Name = "电脑键盘",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()  	end   })
+Tab:AddButton({	Name = "飞车(E)(别人看到)",	Callback = function()     loadstring(game:HttpGet("https://pastebin.com/raw/G3GnBCyC", true))()  	end   })
+Tab:AddTextbox({	Name = "跳跃高度",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end	 })
+Tab:AddTextbox({	Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
+Tab:AddToggle({	Name = "穿墙2",	Default = false,	Callback = function(Value)		if Value then		    Noclip = true		    Stepped = game.RunService.Stepped:Connect(function()			    if Noclip == true then				    for a, b in pairs(game.Workspace:GetChildren()) do                        if b.Name == game.Players.LocalPlayer.Name then                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do                                if v:IsA("BasePart") then                                    v.CanCollide = false                                end                            end                        end                    end			    else				    Stepped:Disconnect()			    end		    end)	    else		    Noclip = false	    end	end})
+Tab:AddToggle({	Name = "夜视",	Default = false,	Callback = function(Value)		if Value then		    game.Lighting.Ambient = Color3.new(1, 1, 1)		else		    game.Lighting.Ambient = Color3.new(0, 0, 0)		end	end})
 A2:AddButton({
 	Name = "主推脚本redz",
 	Callback = function()    
