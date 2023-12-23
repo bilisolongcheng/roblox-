@@ -19,7 +19,8 @@ local A2 = Window:MakeTab({
 })
 local A3 = Window:MakeTab({    Name = "躲避",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A4 = Window:MakeTab({    Name = "破坏者谜团",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-
+local A5 = Window:MakeTab({    Name = "模仿者",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
+local A6 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 Tab:AddTextbox({	Name = "跳跃高度",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end	 })
 Tab:AddTextbox({	Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
 Tab:AddToggle({	Name = "穿墙2",	Default = false,	Callback = function(Value)		if Value then		    Noclip = true		    Stepped = game.RunService.Stepped:Connect(function()			    if Noclip == true then				    for a, b in pairs(game.Workspace:GetChildren()) do                        if b.Name == game.Players.LocalPlayer.Name then                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do                                if v:IsA("BasePart") then                                    v.CanCollide = false                                end                            end                        end                    end			    else				    Stepped:Disconnect()			    end		    end)	    else		    Noclip = false	    end	end})
@@ -48,4 +49,6 @@ A3:AddButton({	Name = "脚本一号",	Callback = function()loadstring(game:HttpG
 end
 }) 
 A4:AddButton({	Name = "破坏者迷团 透视身份",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')    end})  
+A5:AddButton({	Name = "模仿者",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/ttjy9808/obfloadstringmainmimic/main/README.md", true))()    end})
+A6:AddButton({	Name = "DOORS",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Doors"))() end})    
 OrionLib:Init()
