@@ -3,7 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "通用脚本", HidePremium = false, 
 
 OrionLib:MakeNotification({
 	Name = "更新",
-	Content = "更新内容:速度，自然灾害，去除破坏者谜团",
+	Content = "更新内容:去除速度，自然灾害，去除破坏者谜团",
 	Image = "rbxassetid://4483345998",
 	Time = 10
 })
@@ -24,14 +24,6 @@ local A6 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",
 local A7 = Window:MakeTab({    Name = "伐木大亨",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A8 = Window:MakeTab({    Name = "自然灾害",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 
-Tab:AddTextbox({
-	Name = "移动速度",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end	 
-})
 Tab:AddTextbox({	Name = "跳跃高度",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end	 })
 Tab:AddTextbox({	Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
 Tab:AddToggle({	Name = "穿墙2",	Default = false,	Callback = function(Value)		if Value then		    Noclip = true		    Stepped = game.RunService.Stepped:Connect(function()			    if Noclip == true then				    for a, b in pairs(game.Workspace:GetChildren()) do                        if b.Name == game.Players.LocalPlayer.Name then                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do                                if v:IsA("BasePart") then                                    v.CanCollide = false                                end                            end                        end                    end			    else				    Stepped:Disconnect()			    end		    end)	    else		    Noclip = false	    end	end})
