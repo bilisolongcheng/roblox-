@@ -2,10 +2,10 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "通用脚本", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
-	Name = "提醒",
-	Content = "脚本没用请通知我",
+	Name = "更新",
+	Content = "更新内容:速度，自然灾害，去除破坏者谜团",
 	Image = "rbxassetid://4483345998",
-	Time = 5
+	Time = 10
 })
 local Tab = Window:MakeTab({
 	Name = "主要功能",
