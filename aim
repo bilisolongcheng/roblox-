@@ -19,7 +19,7 @@ local A2 = Window:MakeTab({
 })
 local A3 = Window:MakeTab({    Name = "躲避",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A4 = Window:MakeTab({    Name = "破坏者谜团",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local A5 = Window:MakeTab({    Name = "自然灾害",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
+local A5 = Window:MakeTab({    Name = "＊＊＊＊",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A6 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A7 = Window:MakeTab({    Name = "伐木大亨",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 
