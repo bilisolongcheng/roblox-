@@ -5,7 +5,7 @@ OrionLib:MakeNotification({
 	Name = "更新",
 	Content = "更新内容:速度，自然灾害，去除破坏者谜团",
 	Image = "rbxassetid://4483345998",
-	Time = 10
+	Time = 5
 })
 local Tab = Window:MakeTab({
 	Name = "主要功能",
