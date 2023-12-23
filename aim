@@ -5,7 +5,7 @@ OrionLib:MakeNotification({
 	Name = "更新",
 	Content = "更新内容:去除速度，自然灾害，去除破坏者谜团",
 	Image = "rbxassetid://4483345998",
-	Time = 10
+	Time = 5
 })
 local Tab = Window:MakeTab({
 	Name = "主要功能",
@@ -56,4 +56,5 @@ A5:AddButton({	Name = "模仿者",	Callback = function()loadstring(game:HttpGet(
 A6:AddButton({	Name = "DOORS",	Callback = function()loadstring(game:HttpGet(('https://pastebin.com/raw/R8QMbhzv')))() end})    
 A6:AddButton({	Name = "2号",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/zoophiliaphobic/POOPDOORS/main/script.lua'))()end})  
 A7:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
+
 OrionLib:Init()
