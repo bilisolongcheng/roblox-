@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "龙城", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
-	Name = "更新内容",
+	Name = "更新内容    20秒自动关闭",
 	Content = "增加速度，增加自然灾害，去除破坏者谜团脚本，去除模仿者",
 	Image = "rbxassetid://4483345998",
 	Time = 20
