@@ -29,12 +29,10 @@ Tab:AddToggle({
 	Callback = function(Value)
 	'Toggleflag',false,function(s)
 if s then
-esp()else
-unesp()
+noclip()else
+clip()
 end
-end
-	end    
-})
+end)
 Tab:AddTextbox({
 	Name = "移动速度",
 	Default = "",
