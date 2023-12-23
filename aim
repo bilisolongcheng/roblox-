@@ -56,6 +56,3 @@ A5:AddButton({	Name = "模仿者",	Callback = function()loadstring(game:HttpGet(
 A6:AddButton({	Name = "DOORS",	Callback = function()loadstring(game:HttpGet(('https://pastebin.com/raw/R8QMbhzv')))() end})    
 A6:AddButton({	Name = "2号",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/zoophiliaphobic/POOPDOORS/main/script.lua'))()end})  
 A7:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
-B1:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
-
-OrionLib:Init()
