@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "通用脚本", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
+local Window = OrionLib:MakeWindow({Name = "龙城", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
 	Name = "更新",
@@ -57,5 +57,4 @@ A5:AddButton({	Name = "模仿者",	Callback = function()loadstring(game:HttpGet(
 A6:AddButton({	Name = "DOORS",	Callback = function()loadstring(game:HttpGet(('https://pastebin.com/raw/R8QMbhzv')))() end})    
 A6:AddButton({	Name = "2号",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/zoophiliaphobic/POOPDOORS/main/script.lua'))()end})  
 A7:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
-A8:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
 OrionLib:Init()
