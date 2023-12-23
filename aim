@@ -29,6 +29,10 @@ Tab:AddButton({	Name = "防止掉线（反挂机）",	Callback = function()	prin
 Tab:AddButton({	Name = "电脑键盘",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()  	end   })
 Tab:AddButton({	Name = "飞车(E)(别人看到)",	Callback = function()     loadstring(game:HttpGet("https://pastebin.com/raw/G3GnBCyC", true))()  	end   })
 Tab:AddToggle({	Name = "穿墙2",	Default = false,	Callback = function(Value)		if Value then		    Noclip = true		    Stepped = game.RunService.Stepped:Connect(function()			    if Noclip == true then				    for a, b in pairs(game.Workspace:GetChildren()) do                        if b.Name == game.Players.LocalPlayer.Name then                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do                                if v:IsA("BasePart") then                                    v.CanCollide = false                                end                            end                        end                    end			    else				    Stepped:Disconnect()			    end		    end)	    else		    Noclip = false	    end	end})
+Tab:AddButton({	Name = "C人",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/Script'))()    end})
+Tab:AddButton({	Name = "踏空行走",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()	end})
+Tab:AddButton({	Name = "转起来",	Callback = function()      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()  	end})
+
 A2:AddButton({
 	Name = "主推脚本redz",
 	Callback = function()    
