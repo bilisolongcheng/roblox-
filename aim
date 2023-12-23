@@ -17,6 +17,8 @@ local A2 = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+local A3 = Window:MakeTab({    Name = "逃脱",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
+local A4 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 A1:AddButton({
 	Name = "飞行",
 	Callback = function()
@@ -56,5 +58,11 @@ A2:AddButton({
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/autoparry.lua"))()
   	end    
-})   
+})  
+A3:AddButton({	Name = "脚本一号",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Evade.txt'))()
+end
+}) 
+A4:AddButton({	Name = "脚本一号",	Callback = function()
+end
+})    
 OrionLib:Init()
