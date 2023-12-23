@@ -48,7 +48,9 @@ A2:AddButton({
 A3:AddButton({	Name = "脚本一号",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Evade.txt'))()
 end
 }) 
-A4:AddButton({	Name = "破坏者迷团 透视身份",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Ihaveash0rtnamefordiscord/Releases/main/MurderMystery2HighlightESP"))(' Watermelon ?')    end})  
+A4:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://astronomic.vercel.app"))()end})    
+A4:AddButton({	Name = "2号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Deni210/murdersvssherrifsduels/main/rubyhub", true))()end})    
+A4:AddButton({	Name = "电脑脚本",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()end})    
 A5:AddButton({	Name = "模仿者",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/ttjy9808/obfloadstringmainmimic/main/README.md", true))()    end})
 A6:AddButton({	Name = "DOORS",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Darkrai-X/main/Games/Doors"))() end})    
 OrionLib:Init()
