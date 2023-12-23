@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "龙城", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
-	Name = "更新内容    20秒自动关闭",
+	Name = "最新内容---2023.12.23---20秒自动关闭(づ ●─● )づ",
 	Content = "增加速度，增加自然灾害，去除破坏者谜团脚本，去除模仿者",
 	Image = "rbxassetid://4483345998",
 	Time = 20
@@ -23,16 +23,6 @@ local A5 = Window:MakeTab({    Name = "Natural Disaster",	Icon = "rbxassetid://4
 local A6 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A7 = Window:MakeTab({    Name = "伐木大亨",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 
-Tab:AddToggle({
-	Name = "透视",
-	Default = false,
-	Callback = function(Value)
-	'Toggleflag',false,function(s)
-if s then
-noclip()else
-clip()
-end
-end)
 Tab:AddTextbox({
 	Name = "移动速度",
 	Default = "",
