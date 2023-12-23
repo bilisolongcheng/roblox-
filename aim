@@ -23,11 +23,18 @@ local A5 = Window:MakeTab({    Name = "Natural Disaster",	Icon = "rbxassetid://4
 local A6 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A7 = Window:MakeTab({    Name = "伐木大亨",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 
-Tab:AddButton({	Name = "透视",	Callback = function()'Toggleflag',false,function(s)
+Tab:AddToggle({
+	Name = "透视",
+	Default = false,
+	Callback = function(Value)
+	'Toggleflag',false,function(s)
 if s then
 esp()else
 unesp()
 end
+end
+	end    
+})
 Tab:AddTextbox({
 	Name = "移动速度",
 	Default = "",
