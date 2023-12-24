@@ -3,7 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "别看我(/ω＼)害羞", HidePremiu
 
 OrionLib:MakeNotification({
 	Name = "2023.12.24 14:21更新  20秒关闭(^～^)",
-	Content = "更新战争大亨 更新Qis专用区 修复无法加载脚本",
+	Content = "删除DOORS 更新战争大亨 更新Qis专用区 修复无法加载脚本",
 	Image = "rbxassetid://4483345998",
 	Time = 20
 })
@@ -20,8 +20,7 @@ local A2 = Window:MakeTab({
 local A3 = Window:MakeTab({    Name = "躲避",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A4 = Window:MakeTab({    Name = "破坏者谜团",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A5 = Window:MakeTab({    Name = "Natural Disaster",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local A6 = Window:MakeTab({    Name = "开发者测试",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local A7 = Window:MakeTab({    Name = "Qis所需",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
+local A6 = Window:MakeTab({    Name = "Qis所需",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 Tab:AddTextbox({
 	Name = "移动速度",
 	Default = "",
@@ -60,9 +59,8 @@ end
 A4:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Deni210/murdersvssherrifsduels/main/rubyhub", true))()end})    
 A4:AddButton({	Name = "电脑脚本",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()end})    
 A5:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()    end})
-A6:AddToggle({	Name = "钥匙透视",	Default = false,	Callback = function(Value) 'Toggleflag',false,function(s)	for i,v in pairs(KeyChams) do        v.Enabled = s    end   bai.keyesp=send	end})
-A7:AddButton({	Name = "伐木大亨1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
-A7:AddButton({	Name = "战争大亨1号",	Callback = function()
+A6:AddButton({	Name = "伐木大亨1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
+A6:AddButton({	Name = "战争大亨1号",	Callback = function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/AA-Tank-War-Tycoon-Script-8894"))()end})
 
 OrionLib:Init()
