@@ -2,8 +2,8 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "别看我(/ω＼)害羞", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
-	Name = "2023.12.24 14:15更新  20秒关闭(^～^)",
-	Content = "更新War Tycoon 修复无法加载脚本",
+	Name = "2023.12.24 14:21更新  20秒关闭(^～^)",
+	Content = "更新战争大亨 更新Qis专用区 修复无法加载脚本",
 	Image = "rbxassetid://4483345998",
 	Time = 20
 })
@@ -21,8 +21,7 @@ local A3 = Window:MakeTab({    Name = "躲避",	Icon = "rbxassetid://4483345998"
 local A4 = Window:MakeTab({    Name = "破坏者谜团",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A5 = Window:MakeTab({    Name = "Natural Disaster",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A6 = Window:MakeTab({    Name = "DOORS",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local A7 = Window:MakeTab({    Name = "伐木大亨",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local War Tycoon = Window:MakeTab({    Name = "War Tycoon",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
+local A7 = Window:MakeTab({    Name = "Qis所需",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 Tab:AddTextbox({
 	Name = "移动速度",
 	Default = "",
@@ -63,7 +62,8 @@ A4:AddButton({	Name = "电脑脚本",	Callback = function()loadstring(game:HttpG
 A5:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()    end})
 A6:AddButton({	Name = "DOORS",	Callback = function()loadstring(game:HttpGet(('https://pastebin.com/raw/R8QMbhzv')))() end})    
 A6:AddButton({	Name = "2号",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/zoophiliaphobic/POOPDOORS/main/script.lua'))()end})  
-A7:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
-War Tycoon:AddButton({	Name = "1号",	Callback = function()
+A7:AddButton({	Name = "伐木大亨1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
+A7:AddButton({	Name = "战争大亨1号",	Callback = function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/AA-Tank-War-Tycoon-Script-8894"))()end})
+
 OrionLib:Init()
