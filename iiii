@@ -2,8 +2,8 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "别看我(/ω＼)害羞", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
-	Name = "2023.12.24 14:21更新  20秒关闭(^～^)",
-	Content = "删除DOORS 更新战争大亨 更新Qis专用区 修复无法加载脚本",
+	Name = "2023.12.27 13:27更新  20秒关闭(^～^)",
+	Content = "停止更新服务",
 	Image = "rbxassetid://4483345998",
 	Time = 20
 })
