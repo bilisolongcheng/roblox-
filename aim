@@ -2,12 +2,12 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 OrionLib:MakeNotification({
 	Name = "GA中心",
-	Content = "正在加载 "Lua脚本",
+	Content = "正在加载 脚本中心",
 	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
 	Time = 2
 })
 
-local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "GA团队", ConfigFolder = "BeiFengCenter"})
+local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "北风中心", ConfigFolder = "BeiFengCenter"})
 
 local statement = Window:MakeTab({
 	Name = "关于",
@@ -121,12 +121,12 @@ OrionLib:Init()local OrionLib = loadstring(game:HttpGet(('https://raw.githubuser
 
 OrionLib:MakeNotification({
 	Name = "GA中心",
-	Content = "正在加载 GA中心",
+	Content = "正在加载 脚本中心",
 	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
 	Time = 2
 })
 
-local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "GA团队", ConfigFolder = "BeiFengCenter"})
+local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "北风中心", ConfigFolder = "BeiFengCenter"})
 
 local statement = Window:MakeTab({
 	Name = "关于",
