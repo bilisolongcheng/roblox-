@@ -1,13 +1,52 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
 
+LBLG.Name = "LBLG"
+LBLG.Parent = game.CoreGui
+LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LBLG.Enabled = true
+LBL.Name = "LBL"
+LBL.Parent = LBLG
+LBL.BackgroundColor3 = Color3.new(1, 1, 1)
+LBL.BackgroundTransparency = 1
+LBL.BorderColor3 = Color3.new(0, 0, 0)
+LBL.Position = UDim2.new(0.75,0,0.010,0)
+LBL.Size = UDim2.new(0, 133, 0, 30)
+LBL.Font = Enum.Font.GothamSemibold
+LBL.Text = "TextLabel"
+LBL.TextColor3 = Color3.new(1, 1, 1)
+LBL.TextScaled = true
+LBL.TextSize = 14
+LBL.TextWrapped = true
+LBL.Visible = true
+
+local FpsLabel = LBL
+local Heartbeat = game:GetService("RunService").Heartbeat
+local LastIteration, Start
+local FrameUpdateTable = { }
+
+local function HeartbeatUpdate()
+	LastIteration = tick()
+	for Index = #FrameUpdateTable, 1, -1 do
+		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
+	end
+	FrameUpdateTable[1] = LastIteration
+	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
+	CurrentFPS = CurrentFPS - CurrentFPS % 1
+	FpsLabel.Text = ("北京时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
+end
+Start = tick()
+Heartbeat:Connect(HeartbeatUpdate)
 OrionLib:MakeNotification({
-	Name = "GA中心",
-	Content = "正在加载 脚本中心",
+	Name = "系统",
+	Content = "欢迎测试人员",
 	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
 	Time = 2
 })
 
-local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "北风中心", ConfigFolder = "BeiFengCenter"})
+local Window = OrionLib:MakeWindow({Name = "GA团队 | 注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "GA团队", ConfigFolder = "BeiFengCenter"})
 
 local statement = Window:MakeTab({
 	Name = "关于",
@@ -27,7 +66,7 @@ local Currency = Window:MakeTab({
 })
 
 Currency:AddButton({
-	Name = "Infinite Yield",
+	Name = "管理员指令 开发者脚本",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
 	end
@@ -73,23 +112,6 @@ Currency:AddToggle({
 	end
 })
 
-Currency:AddButton({
-	Name = "建筑工具",
-	Callback = function()
-		Hammer = Instance.new("HopperBin")
-		Hammer.Name = "锤子"
-		Hammer.BinType = 4
-		Hammer.Parent = game.Players.LocalPlayer.Backpack
-		Clone = Instance.new("HopperBin")
-		Clone.Name = "克隆"
-		Clone.BinType = 3
-		Clone.Parent = game.Players.LocalPlayer.Backpack
-		Grab = Instance.new("HopperBin")
-		Grab.Name = "抓取"
-		Grab.BinType = 2
-	end
-})
-
 Currency:AddToggle({
 	Name = "穿墙",
 	Default = false,
@@ -116,17 +138,57 @@ Currency:AddToggle({
 		end
 	end
 })
+
 
 OrionLib:Init()local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
 
+LBLG.Name = "LBLG"
+LBLG.Parent = game.CoreGui
+LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LBLG.Enabled = true
+LBL.Name = "LBL"
+LBL.Parent = LBLG
+LBL.BackgroundColor3 = Color3.new(1, 1, 1)
+LBL.BackgroundTransparency = 1
+LBL.BorderColor3 = Color3.new(0, 0, 0)
+LBL.Position = UDim2.new(0.75,0,0.010,0)
+LBL.Size = UDim2.new(0, 133, 0, 30)
+LBL.Font = Enum.Font.GothamSemibold
+LBL.Text = "TextLabel"
+LBL.TextColor3 = Color3.new(1, 1, 1)
+LBL.TextScaled = true
+LBL.TextSize = 14
+LBL.TextWrapped = true
+LBL.Visible = true
+
+local FpsLabel = LBL
+local Heartbeat = game:GetService("RunService").Heartbeat
+local LastIteration, Start
+local FrameUpdateTable = { }
+
+local function HeartbeatUpdate()
+	LastIteration = tick()
+	for Index = #FrameUpdateTable, 1, -1 do
+		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
+	end
+	FrameUpdateTable[1] = LastIteration
+	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
+	CurrentFPS = CurrentFPS - CurrentFPS % 1
+	FpsLabel.Text = ("北京时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
+end
+Start = tick()
+Heartbeat:Connect(HeartbeatUpdate)
 OrionLib:MakeNotification({
-	Name = "GA中心",
-	Content = "正在加载 脚本中心",
+	Name = "系统",
+	Content = "欢迎测试人员",
 	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
 	Time = 2
 })
 
-local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "北风中心", ConfigFolder = "BeiFengCenter"})
+local Window = OrionLib:MakeWindow({Name = "GA团队 | 注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "GA团队", ConfigFolder = "BeiFengCenter"})
 
 local statement = Window:MakeTab({
 	Name = "关于",
@@ -146,7 +208,7 @@ local Currency = Window:MakeTab({
 })
 
 Currency:AddButton({
-	Name = "Infinite Yield",
+	Name = "管理员指令 开发者脚本",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
 	end
@@ -192,23 +254,6 @@ Currency:AddToggle({
 	end
 })
 
-Currency:AddButton({
-	Name = "建筑工具",
-	Callback = function()
-		Hammer = Instance.new("HopperBin")
-		Hammer.Name = "锤子"
-		Hammer.BinType = 4
-		Hammer.Parent = game.Players.LocalPlayer.Backpack
-		Clone = Instance.new("HopperBin")
-		Clone.Name = "克隆"
-		Clone.BinType = 3
-		Clone.Parent = game.Players.LocalPlayer.Backpack
-		Grab = Instance.new("HopperBin")
-		Grab.Name = "抓取"
-		Grab.BinType = 2
-	end
-})
-
 Currency:AddToggle({
 	Name = "穿墙",
 	Default = false,
@@ -235,5 +280,6 @@ Currency:AddToggle({
 		end
 	end
 })
+
 
 OrionLib:Init()
