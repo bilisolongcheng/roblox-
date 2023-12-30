@@ -59,48 +59,96 @@ statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
 statement:AddLabel("更新内容 - 全面更换所有内容")
 statement:AddLabel("更新时间 - 2023.12.30")
 
-local Currency = Window:MakeTab({
+local Tab = Window:MakeTab({
 	Name = "通用功能",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
 })
 
-Currency:AddButton({
+
+Tab:AddTextbox({
+
+	Name = "跳跃高度设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "移动速度设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "重力设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Workspace.Gravity = Value
+
+	end
+
+})
+Tab:AddButton({
 	Name = "管理员指令 开发者脚本",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "飞行GUI-V3",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "飞车",
 	Callback = function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "踏空行走",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "爬墙",
 	Callback = function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
 	end
 })
 
-Currency:AddToggle({
+Tab:AddToggle({
 	Name = "夜视",
 	Default = false,
 	Callback = function(Value)
@@ -112,7 +160,7 @@ Currency:AddToggle({
 	end
 })
 
-Currency:AddToggle({
+Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
@@ -139,6 +187,17 @@ Currency:AddToggle({
 	end
 })
 
+Tab:AddButton({
+
+	Name = "转起来",
+
+	Callback = function()
+
+      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+
+  	end
+
+})
 
 OrionLib:Init()local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local LBLG = Instance.new("ScreenGui", getParent)
@@ -201,48 +260,96 @@ statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
 statement:AddLabel("更新内容 - 全面更换所有内容")
 statement:AddLabel("更新时间 - 2023.12.30")
 
-local Currency = Window:MakeTab({
+local Tab = Window:MakeTab({
 	Name = "通用功能",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
 })
 
-Currency:AddButton({
+
+Tab:AddTextbox({
+
+	Name = "跳跃高度设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "移动速度设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "重力设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Workspace.Gravity = Value
+
+	end
+
+})
+Tab:AddButton({
 	Name = "管理员指令 开发者脚本",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "飞行GUI-V3",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "飞车",
 	Callback = function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "踏空行走",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
 	end
 })
 
-Currency:AddButton({
+Tab:AddButton({
 	Name = "爬墙",
 	Callback = function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
 	end
 })
 
-Currency:AddToggle({
+Tab:AddToggle({
 	Name = "夜视",
 	Default = false,
 	Callback = function(Value)
@@ -254,7 +361,7 @@ Currency:AddToggle({
 	end
 })
 
-Currency:AddToggle({
+Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
@@ -281,5 +388,16 @@ Currency:AddToggle({
 	end
 })
 
+Tab:AddButton({
+
+	Name = "转起来",
+
+	Callback = function()
+
+      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+
+  	end
+
+})
 
 OrionLib:Init()
