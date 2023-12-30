@@ -1,66 +1,239 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "别看我(/ω＼)害羞", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
-	Name = "2023.12.30 16:15更新  20秒关闭(^～^)",
-	Content = "更新恐鬼症传送，删除躲避",
-	Image = "rbxassetid://4483345998",
-	Time = 20
+	Name = "GA中心",
+	Content = "正在加载 "Lua脚本",
+	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
+	Time = 2
 })
-local Tab = Window:MakeTab({
-	Name = "主要功能",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local A2 = Window:MakeTab({
-	Name = "刀刃球",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-local A3 = Window:MakeTab({    Name = "恐鬼症",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local A4 = Window:MakeTab({    Name = "破坏者谜团",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local A5 = Window:MakeTab({    Name = "Natural Disaster",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-local A6 = Window:MakeTab({    Name = "Qis所需",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
-Tab:AddTextbox({
-	Name = "移动速度",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end	 
-})
-Tab:AddTextbox({	Name = "跳跃高度",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value	end	 })
-Tab:AddTextbox({	Name = "重力设置",	Default = "",	TextDisappear = true,	Callback = function(Value)		game.Workspace.Gravity = Value	end})
-Tab:AddToggle({	Name = "穿墙2",	Default = false,	Callback = function(Value)		if Value then		    Noclip = true		    Stepped = game.RunService.Stepped:Connect(function()			    if Noclip == true then				    for a, b in pairs(game.Workspace:GetChildren()) do                        if b.Name == game.Players.LocalPlayer.Name then                            for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do                                if v:IsA("BasePart") then                                    v.CanCollide = false                                end                            end                        end                    end			    else				    Stepped:Disconnect()			    end		    end)	    else		    Noclip = false	    end	end})
-Tab:AddToggle({	Name = "夜视",	Default = false,	Callback = function(Value)		if Value then		    game.Lighting.Ambient = Color3.new(1, 1, 1)		else		    game.Lighting.Ambient = Color3.new(0, 0, 0)		end	end})
-Tab:AddButton({	Name = "踏空行走",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()	end})
-Tab:AddButton({	Name = "飞行V3（隐藏）",	Callback = function()     loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx"),true))() 	end    })
-Tab:AddButton({	Name = "飞车(别人看到)",	Callback = function()     loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/fx2.0"),true))()  	end   })
-Tab:AddButton({	Name = "电脑键盘",	Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()  	end   })
-Tab:AddButton({	Name = "点击传送工具",	Callback = function()mouse = game.Players.LocalPlayer:GetMouse() tool = Instance.new("Tool") tool.RequiresHandle = false tool.Name = "[FE] TELEPORT TOOL" tool.Activated:connect(function() local pos = mouse.Hit+Vector3.new(0,2.5,0) pos = CFrame.new(pos.X,pos.Y,pos.Z) game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos end) tool.Parent = game.Players.LocalPlayer.Backpack	end})
-Tab:AddButton({	Name = "防止掉线（反挂机）",	Callback = function()	print("Anti Afk On")		local vu = game:GetService("VirtualUser")		game:GetService("Players").LocalPlayer.Idled:connect(function()		   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		   wait(1)		   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)		end)  	end})
-Tab:AddButton({	Name = "转起来",	Callback = function()      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()  	end})
 
-A2:AddButton({
-	Name = "主推脚本redz",
-	Callback = function()    
-loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/redz9999"))()loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/redz9999"))()
-        end
+local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "GA团队", ConfigFolder = "BeiFengCenter"})
+
+local statement = Window:MakeTab({
+	Name = "关于",
+	Icon = "rbxassetid://14359155637",
+	PremiumOnly = false
 })
-A2:AddButton({
-	Name = "脚本2号",
+
+statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生无法使用的情况，请明细")
+statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
+statement:AddLabel("更新内容 - 全面更换所有内容")
+statement:AddLabel("更新时间 - 2023.12.30")
+
+local Currency = Window:MakeTab({
+	Name = "通用功能",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+Currency:AddButton({
+	Name = "Infinite Yield",
 	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/autoparry.lua"))()
-  	end    
-})  
-A3:AddButton({	Name = "恐鬼症菜单",	Callback = function()loadstring(game:HttpGet(('https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008'))()
-end
-}) 
-A4:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Deni210/murdersvssherrifsduels/main/rubyhub", true))()end})    
-A4:AddButton({	Name = "电脑脚本",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Doggo-cryto/EclipseMM2/master/Script", true))()end})    
-A5:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()    end})
-A6:AddButton({	Name = "伐木大亨1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/frencaliber/LuaWareLoader.lw/main/luawareloader.wtf",true))()end})  
-A6:AddButton({	Name = "战争大亨1号",	Callback = function()
-loadstring(game:HttpGet("https://scriptblox.com/raw/AA-Tank-War-Tycoon-Script-8894"))()end})
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
+	end
+})
+
+Currency:AddButton({
+	Name = "飞行GUI-V3",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
+	end
+})
+
+Currency:AddButton({
+	Name = "飞车",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+	end
+})
+
+Currency:AddButton({
+	Name = "踏空行走",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
+	end
+})
+
+Currency:AddButton({
+	Name = "爬墙",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+	end
+})
+
+Currency:AddToggle({
+	Name = "夜视",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			game.Lighting.Ambient = Color3.new(1, 1, 1)
+		else
+			game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end
+})
+
+Currency:AddButton({
+	Name = "建筑工具",
+	Callback = function()
+		Hammer = Instance.new("HopperBin")
+		Hammer.Name = "锤子"
+		Hammer.BinType = 4
+		Hammer.Parent = game.Players.LocalPlayer.Backpack
+		Clone = Instance.new("HopperBin")
+		Clone.Name = "克隆"
+		Clone.BinType = 3
+		Clone.Parent = game.Players.LocalPlayer.Backpack
+		Grab = Instance.new("HopperBin")
+		Grab.Name = "抓取"
+		Grab.BinType = 2
+	end
+})
+
+Currency:AddToggle({
+	Name = "穿墙",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			Noclip = true
+			Stepped = game.RunService.Stepped:Connect(function()
+				if Noclip == true then
+					for a, b in pairs(game.Workspace:GetChildren()) do
+						if b.Name == game.Players.LocalPlayer.Name then
+							for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+								if v:IsA("BasePart") then
+									v.CanCollide = false
+								end
+							end
+						end
+					end
+				else
+					Stepped:Disconnect()
+				end
+			end)
+		else
+			Noclip = false
+		end
+	end
+})
+
+OrionLib:Init()local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+OrionLib:MakeNotification({
+	Name = "GA中心",
+	Content = "正在加载 GA中心",
+	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
+	Time = 2
+})
+
+local Window = OrionLib:MakeWindow({Name = "'GA团队 | 您使用的注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "GA团队", ConfigFolder = "BeiFengCenter"})
+
+local statement = Window:MakeTab({
+	Name = "关于",
+	Icon = "rbxassetid://14359155637",
+	PremiumOnly = false
+})
+
+statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生无法使用的情况，请明细")
+statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
+statement:AddLabel("更新内容 - 全面更换所有内容")
+statement:AddLabel("更新时间 - 2023.12.30")
+
+local Currency = Window:MakeTab({
+	Name = "通用功能",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+Currency:AddButton({
+	Name = "Infinite Yield",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
+	end
+})
+
+Currency:AddButton({
+	Name = "飞行GUI-V3",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
+	end
+})
+
+Currency:AddButton({
+	Name = "飞车",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+	end
+})
+
+Currency:AddButton({
+	Name = "踏空行走",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
+	end
+})
+
+Currency:AddButton({
+	Name = "爬墙",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+	end
+})
+
+Currency:AddToggle({
+	Name = "夜视",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			game.Lighting.Ambient = Color3.new(1, 1, 1)
+		else
+			game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end
+})
+
+Currency:AddButton({
+	Name = "建筑工具",
+	Callback = function()
+		Hammer = Instance.new("HopperBin")
+		Hammer.Name = "锤子"
+		Hammer.BinType = 4
+		Hammer.Parent = game.Players.LocalPlayer.Backpack
+		Clone = Instance.new("HopperBin")
+		Clone.Name = "克隆"
+		Clone.BinType = 3
+		Clone.Parent = game.Players.LocalPlayer.Backpack
+		Grab = Instance.new("HopperBin")
+		Grab.Name = "抓取"
+		Grab.BinType = 2
+	end
+})
+
+Currency:AddToggle({
+	Name = "穿墙",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			Noclip = true
+			Stepped = game.RunService.Stepped:Connect(function()
+				if Noclip == true then
+					for a, b in pairs(game.Workspace:GetChildren()) do
+						if b.Name == game.Players.LocalPlayer.Name then
+							for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+								if v:IsA("BasePart") then
+									v.CanCollide = false
+								end
+							end
+						end
+					end
+				else
+					Stepped:Disconnect()
+				end
+			end)
+		else
+			Noclip = false
+		end
+	end
+})
 
 OrionLib:Init()
