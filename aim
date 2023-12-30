@@ -2,8 +2,8 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "别看我(/ω＼)害羞", HidePremium = false, SaveConfig = false, IntroText = "注入器："..identifyexecutor(), ConfigFolder = "通用脚本"})
 
 OrionLib:MakeNotification({
-	Name = "2023.12.27 13:27更新  20秒关闭(^～^)",
-	Content = "停止更新服务",
+	Name = "2023.12.30 16:15更新  20秒关闭(^～^)",
+	Content = "更新恐鬼症传送，删除躲避",
 	Image = "rbxassetid://4483345998",
 	Time = 20
 })
@@ -17,7 +17,7 @@ local A2 = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-local A3 = Window:MakeTab({    Name = "躲避",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
+local A3 = Window:MakeTab({    Name = "恐鬼症",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A4 = Window:MakeTab({    Name = "破坏者谜团",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A5 = Window:MakeTab({    Name = "Natural Disaster",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
 local A6 = Window:MakeTab({    Name = "Qis所需",	Icon = "rbxassetid://4483345998",	PremiumOnly = false})
@@ -53,7 +53,7 @@ A2:AddButton({
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/autoparry.lua"))()
   	end    
 })  
-A3:AddButton({	Name = "脚本一号",	Callback = function()loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Evade.txt'))()
+A3:AddButton({	Name = "恐鬼症菜单",	Callback = function()loadstring(game:HttpGet(('https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008'))()
 end
 }) 
 A4:AddButton({	Name = "1号",	Callback = function()loadstring(game:HttpGet("https://raw.githubusercontent.com/Deni210/murdersvssherrifsduels/main/rubyhub", true))()end})    
