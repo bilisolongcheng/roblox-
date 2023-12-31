@@ -1,169 +1,148 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
- 
- 
-local MainWindow = Rayfield:CreateWindow({
-    Name = "Main",
-    LoadingTitle = "Loading...",
-    LoadingSubtitle = "by Falxe",
-    ConfigurationSaving = {
-       Enabled = true,
-       FolderName = nil, -- Create a custom folder for your hub/game
-       FileName = "McDonalds Hub"
-    },
-    Discord = {
-       Enabled = false,
-       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD.
-       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-    },
-    KeySystem = false, -- Set this to true to use our key system
-    KeySettings = {
-       Title = "McDonalds Hub",
-       Subtitle = "Key System",
-       Note = "Key: McDonalds",
-       FileName = "SiriusKey",
-       SaveKey = true,
-       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = "McDonalds"
-    }
- })
- 
- 
- local MainTab = MainWindow:CreateTab("Main", 4483362458) -- Title, Image
- 
- 
- local Button = MainTab:CreateButton({
-    Name = "print 'hello'",
-    Callback = function(v)
-        v = print('hello')
-    end,
- })
- 
- 
- 
- 
- local Toggle = MainTab:CreateToggle({
-    Name = "Infinite Jump",
-    CurrentValue = false,
-    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(InfiniteJumpEnabled)
-        local InfiniteJumpEnabled = true
-        game:GetService("UserInputService").JumpRequest:connect(function()
-            if InfiniteJumpEnabled then
-                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-            end
-        end)
-    end,
- })
- 
- 
- 
- local Slider = MainTab:CreateSlider({
-    Name = "速度",
-    Range = {16, 250},
-    Increment = 10,
-    Suffix = "移动速度",
-    CurrentValue = 10,
-    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(v)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
-    end,
- })
- 
- 
- 
- local Slider = MainTab:CreateSlider({
-    Name = "JumpPower",
-    Range = {50, 500},
-    Increment = 10,
-    Suffix = "JumpPower",
-    CurrentValue = 10,
-    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(v)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
-    end,
- })
- local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
- 
- 
-local MainWindow = Rayfield:CreateWindow({
-    Name = "Main",
-    LoadingTitle = "Loading...",
-    LoadingSubtitle = "by Falxe",
-    ConfigurationSaving = {
-       Enabled = true,
-       FolderName = nil, -- Create a custom folder for your hub/game
-       FileName = "McDonalds Hub"
-    },
-    Discord = {
-       Enabled = false,
-       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD.
-       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-    },
-    KeySystem = false, -- Set this to true to use our key system
-    KeySettings = {
-       Title = "McDonalds Hub",
-       Subtitle = "Key System",
-       Note = "Key: McDonalds",
-       FileName = "SiriusKey",
-       SaveKey = true,
-       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = "McDonalds"
-    }
- })
- 
- 
- local MainTab = MainWindow:CreateTab("Main", 4483362458) -- Title, Image
- 
- 
- local Button = MainTab:CreateButton({
-    Name = "print 'hello'",
-    Callback = function(v)
-        v = print('hello')
-    end,
- })
- 
- 
- 
- 
- local Toggle = MainTab:CreateToggle({
-    Name = "Infinite Jump",
-    CurrentValue = false,
-    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(InfiniteJumpEnabled)
-        local InfiniteJumpEnabled = true
-        game:GetService("UserInputService").JumpRequest:connect(function()
-            if InfiniteJumpEnabled then
-                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-            end
-        end)
-    end,
- })
- 
- 
- 
- local Slider = MainTab:CreateSlider({
-    Name = "速度",
-    Range = {16, 250},
-    Increment = 10,
-    Suffix = "移动速度",
-    CurrentValue = 10,
-    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(v)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
-    end,
- })
- 
- 
- 
- local Slider = MainTab:CreateSlider({
-    Name = "JumpPower",
-    Range = {50, 500},
-    Increment = 10,
-    Suffix = "JumpPower",
-    CurrentValue = 10,
-    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(v)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
-    end,
- })
- 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+OrionLib:MakeNotification({
+	Name = "系统",
+	Content = "欢迎测试人员",
+	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
+	Time = 2
+})
+local Window = OrionLib:MakeWindow({Name = "测试版本", HidePremium = false, SaveConfig = true,IntroText = "通用脚本", ConfigFolder = "OrionTest"})
+
+local statement = Window:MakeTab({
+	Name = "警告",
+	Icon = "rbxassetid://14359155637",
+	PremiumOnly = false
+})
+statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
+local Tab = Window:MakeTab({
+	Name = "路屋",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "传送至 男孩房",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-32.2, 24.8, -87.6)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 浴室",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-22.2, 24.9, -99.3)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 婴儿房",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17.9, 24.9, -100.6)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 爸爸房",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(30.3, 24.8, -86.4)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 厕所",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(58.0, 24.8, -99.1)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 客厅",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(45.2, 24.9, -71.1)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 厨房/餐厅",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28.9, 24.8, -39.9)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 杂物房",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15.0, 24.9, -53.0)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 车库",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7.7, 24.9, -44.8)
+	end 
+})
+Tab:AddButton({
+	Name = "传送至 地下室",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61.3, 12.8, -47.4)
+	end 
+})
+
+local T = Window:MakeTab({
+	Name = "通用功能",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+T:AddButton({
+	Name = "管理员指令 开发者脚本",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
+	end
+})
+
+T:AddButton({
+	Name = "飞行GUI-V3",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
+	end
+})
+
+T:AddButton({
+	Name = "踏空行走",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
+	end
+})
+
+T:AddToggle({
+	Name = "夜视",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			game.Lighting.Ambient = Color3.new(1, 1, 1)
+		else
+			game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end
+})
+
+T:AddToggle({
+	Name = "穿墙",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			Noclip = true
+			Stepped = game.RunService.Stepped:Connect(function()
+				if Noclip == true then
+					for a, b in pairs(game.Workspace:GetChildren()) do
+						if b.Name == game.Players.LocalPlayer.Name then
+							for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+								if v:IsA("BasePart") then
+									v.CanCollide = false
+								end
+							end
+						end
+					end
+				else
+					Stepped:Disconnect()
+				end
+			end)
+		else
+			Noclip = false
+		end
+	end
+})
+
+OrionLib:Init()
