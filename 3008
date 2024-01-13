@@ -13,7 +13,7 @@ local statement = Window:MakeTab({
 	PremiumOnly = false
 })
 statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
-statement:AddParagraph("警告", "测试结果为走路拉疾跑再传送有百分之八十概率被拉回")
+statement:AddParagraph("使用教程", "拉疾跑加走然后传送概率传送成功，概率传送失败被拉回")
 local Tab = Window:MakeTab({
 	Name = "路屋",
 	Icon = "rbxassetid://14481493145",
