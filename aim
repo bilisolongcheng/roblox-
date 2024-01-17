@@ -56,63 +56,14 @@ local statement = Window:MakeTab({
 
 statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生无法使用的情况，请明细")
 statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
-statement:AddLabel("更新内容 - 恐鬼症传送")
-statement:AddLabel("预计更新内容 - 修复脚本中心重新运行代码")
-statement:AddLabel("更新时间 - 2023.12.31")
+statement:AddLabel("更新内容 - 删除大部分功能")
+statement:AddLabel("预计更新内容 - 重新改变代码")
+statement:AddLabel("更新时间 - 2023.1.17")
 
 local Tab = Window:MakeTab({
 	Name = "通用功能",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
-})
-
-
-Tab:AddTextbox({
-
-	Name = "跳跃高度设置",
-
-	Default = "",
-
-	TextDisappear = true,
-
-	Callback = function(Value)
-
-		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-
-	end
-
-})
-
-Tab:AddTextbox({
-
-	Name = "移动速度设置",
-
-	Default = "",
-
-	TextDisappear = true,
-
-	Callback = function(Value)
-
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-
-	end
-
-})
-
-Tab:AddTextbox({
-
-	Name = "重力设置",
-
-	Default = "",
-
-	TextDisappear = true,
-
-	Callback = function(Value)
-
-		game.Workspace.Gravity = Value
-
-	end
-
 })
 Tab:AddButton({
 	Name = "管理员指令 开发者脚本",
@@ -128,27 +79,6 @@ Tab:AddButton({
 	end
 })
 
-Tab:AddButton({
-	Name = "飞车",
-	Callback = function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
-	end
-})
-
-Tab:AddButton({
-	Name = "踏空行走",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
-	end
-})
-
-Tab:AddButton({
-	Name = "爬墙",
-	Callback = function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
-	end
-})
-
 Tab:AddToggle({
 	Name = "夜视",
 	Default = false,
@@ -161,60 +91,4 @@ Tab:AddToggle({
 	end
 })
 
-Tab:AddToggle({
-	Name = "穿墙",
-	Default = false,
-	Callback = function(Value)
-		if Value then
-			Noclip = true
-			Stepped = game.RunService.Stepped:Connect(function()
-				if Noclip == true then
-					for a, b in pairs(game.Workspace:GetChildren()) do
-						if b.Name == game.Players.LocalPlayer.Name then
-							for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
-								if v:IsA("BasePart") then
-									v.CanCollide = false
-								end
-							end
-						end
-					end
-				else
-					Stepped:Disconnect()
-				end
-			end)
-		else
-			Noclip = false
-		end
-	end
-})
-
-Tab:AddButton({
-
-	Name = "转起来",
-
-	Callback = function()
-
-      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-
-  	end
-
-})
-
-local Fear = Window:MakeTab({
-	Name = "恐鬼症",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-
-Fear:AddButton({
-
-	Name = "恐鬼症传送菜单",
-
-	Callback = function()
-	
-      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008')))()
-      	
-  	end
-
-})
 OrionLib:Init()
