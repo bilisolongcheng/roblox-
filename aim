@@ -66,54 +66,6 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-
-Tab:AddTextbox({
-
-	Name = "跳跃高度设置",
-
-	Default = "",
-
-	TextDisappear = true,
-
-	Callback = function(Value)
-
-		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-
-	end
-
-})
-
-Tab:AddTextbox({
-
-	Name = "移动速度设置",
-
-	Default = "",
-
-	TextDisappear = true,
-
-	Callback = function(Value)
-
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-
-	end
-
-})
-
-Tab:AddTextbox({
-
-	Name = "重力设置",
-
-	Default = "",
-
-	TextDisappear = true,
-
-	Callback = function(Value)
-
-		game.Workspace.Gravity = Value
-
-	end
-
-})
 Tab:AddButton({
 	Name = "管理员指令 开发者脚本",
 	Callback = function()
