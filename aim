@@ -53,7 +53,7 @@ Tab:AddToggle({
 	end
 })
 
-T:AddToggle({
+Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
