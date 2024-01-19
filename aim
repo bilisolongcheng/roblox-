@@ -52,5 +52,39 @@ Tab:AddToggle({
 		end
 	end
 })
+local Fear = Window:MakeTab({
+	Name = "恐鬼症",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
 
+Fear:AddButton({
+
+	Name = "恐鬼症传送菜单",
+
+	Callback = function()
+	
+      	loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
+      	
+  	end
+
+})
+
+local bear = Window:MakeTab({
+	Name = "熊",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+bear:AddButton({
+
+	Name = "熊传送菜单",
+
+	Callback = function()
+	
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/231"))()
+      	
+  	end
+
+})
 OrionLib:Init()
