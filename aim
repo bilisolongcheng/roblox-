@@ -183,6 +183,18 @@ local et = Window:MakeTab({
 })
 
 et:AddButton({
+
+	Name = "转起来",
+
+	Callback = function()
+
+      	loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+
+  	end
+
+})
+
+et:AddButton({
 	Name = "飞车",
 	Callback = function()
 		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
@@ -207,7 +219,7 @@ Fear:AddButton({
 
 	Callback = function()
 	
-      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
+      	loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
       	
   	end
 
@@ -225,7 +237,7 @@ bear:AddButton({
 
 	Callback = function()
 	
-      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/231"))()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
       	
   	end
 
