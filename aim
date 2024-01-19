@@ -56,9 +56,9 @@ local statement = Window:MakeTab({
 
 statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生无法使用的情况，请明细")
 statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
-statement:AddLabel("更新内容 - 熊'(阿尔法)传送")
-statement:AddLabel("预计更新内容 - 无")
-statement:AddLabel("更新时间 - 2023.1.19")
+statement:AddLabel("更新内容 - 恐鬼症传送")
+statement:AddLabel("预计更新内容 - 修复脚本中心重新运行代码")
+statement:AddLabel("更新时间 - 2023.12.31")
 
 local Tab = Window:MakeTab({
 	Name = "通用功能",
@@ -124,7 +124,14 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "飞行GUI-V3",
 	Callback = function()
-		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/fx"), true))()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
+	end
+})
+
+Tab:AddButton({
+	Name = "飞车",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
 	end
 })
 
@@ -132,6 +139,13 @@ Tab:AddButton({
 	Name = "踏空行走",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
+	end
+})
+
+Tab:AddButton({
+	Name = "爬墙",
+	Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
 	end
 })
 
@@ -174,15 +188,7 @@ Tab:AddToggle({
 	end
 })
 
-
-
-local et = Window:MakeTab({
-	Name = "娱乐功能",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-
-et:AddButton({
+Tab:AddButton({
 
 	Name = "转起来",
 
@@ -192,19 +198,6 @@ et:AddButton({
 
   	end
 
-})
-
-et:AddButton({
-	Name = "飞车",
-	Callback = function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
-	end
-})
-et:AddButton({
-	Name = "爬墙",
-	Callback = function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
-	end
 })
 
 local Fear = Window:MakeTab({
@@ -219,27 +212,10 @@ Fear:AddButton({
 
 	Callback = function()
 	
-      	loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
-      	
-  	end
-
-})
-
-local bear = Window:MakeTab({
-	Name = "熊(阿尔法)",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-
-bear:AddButton({
-
-	Name = "熊(阿尔法)传送菜单",
-
-	Callback = function()
-	
-      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
+      	loadstring(game:HttpGet(('https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008')))()
       	
   	end
 
 })
 OrionLib:Init()
+
