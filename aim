@@ -98,22 +98,4 @@ Fear:AddButton({
 
 })
 
-local transfer = Window:MakeTab({
-	Name = "熊",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-
-transfer:AddButton({
-
-	Name = "熊传送菜单",
-
-	Callback = function()
-	
-      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/231"))()
-      	
-  	end
-
-})
-
 OrionLib:Init()
