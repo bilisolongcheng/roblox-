@@ -1,113 +1,134 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local LBLG = Instance.new("ScreenGui", getParent)
+local LBL = Instance.new("TextLabel", getParent)
+local player = game.Players.LocalPlayer
+
+LBLG.Name = "LBLG"
+LBLG.Parent = game.CoreGui
+LBLG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LBLG.Enabled = true
+LBL.Name = "LBL"
+LBL.Parent = LBLG
+LBL.BackgroundColor3 = Color3.new(1, 1, 1)
+LBL.BackgroundTransparency = 1
+LBL.BorderColor3 = Color3.new(0, 0, 0)
+LBL.Position = UDim2.new(0.75,0,0.010,0)
+LBL.Size = UDim2.new(0, 133, 0, 30)
+LBL.Font = Enum.Font.GothamSemibold
+LBL.Text = "TextLabel"
+LBL.TextColor3 = Color3.new(1, 1, 1)
+LBL.TextScaled = true
+LBL.TextSize = 14
+LBL.TextWrapped = true
+LBL.Visible = true
+
+local FpsLabel = LBL
+local Heartbeat = game:GetService("RunService").Heartbeat
+local LastIteration, Start
+local FrameUpdateTable = { }
+
+local function HeartbeatUpdate()
+	LastIteration = tick()
+	for Index = #FrameUpdateTable, 1, -1 do
+		FrameUpdateTable[Index + 1] = (FrameUpdateTable[Index] >= LastIteration - 1) and FrameUpdateTable[Index] or nil
+	end
+	FrameUpdateTable[1] = LastIteration
+	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
+	CurrentFPS = CurrentFPS - CurrentFPS % 1
+	FpsLabel.Text = ("北京时间:"..os.date("%H").."时"..os.date("%M").."分"..os.date("%S"))
+end
+Start = tick()
+Heartbeat:Connect(HeartbeatUpdate)
 OrionLib:MakeNotification({
 	Name = "系统",
 	Content = "欢迎测试人员",
 	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
 	Time = 2
 })
-local Window = OrionLib:MakeWindow({Name = "测试版本", HidePremium = false, SaveConfig = true,IntroText = "通用脚本", ConfigFolder = "OrionTest"})
+
+local Window = OrionLib:MakeWindow({Name = "GA团队 | 注入器：" ..(identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"), HidePremium = false, SaveConfig = true, IntroText = "GA团队", ConfigFolder = "BeiFengCenter"})
 
 local statement = Window:MakeTab({
-	Name = "警告",
+	Name = "关于",
 	Icon = "rbxassetid://14359155637",
 	PremiumOnly = false
 })
-statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
-statement:AddParagraph("使用教程", "拉疾跑加走然后传送概率传送成功，概率传送失败被拉回")
-local Tab = Window:MakeTab({
-	Name = "路屋",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-Tab:AddButton({
-	Name = "传送至 男孩房",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-32.2, 24.8, -87.6)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 浴室",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-22.2, 24.9, -99.3)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 婴儿房",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17.9, 24.9, -100.6)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 爸爸房",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(30.3, 24.8, -86.4)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 厕所",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(58.0, 24.8, -99.1)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 客厅",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(45.2, 24.9, -71.1)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 厨房/餐厅",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28.9, 24.8, -39.9)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 杂物房",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15.0, 24.9, -53.0)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 车库",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7.7, 24.9, -44.8)
-	end 
-})
-Tab:AddButton({
-	Name = "传送至 地下室",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(61.3, 12.8, -47.4)
-	end 
-})
 
-local T = Window:MakeTab({
+statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生无法使用的情况，请明细")
+statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
+statement:AddLabel("更新内容 - 熊'(阿尔法)传送")
+statement:AddLabel("预计更新内容 - ...")
+
+local Tab = Window:MakeTab({
 	Name = "通用功能",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
 })
 
-T:AddButton({
+
+Tab:AddTextbox({
+
+	Name = "跳跃高度设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "移动速度设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+
+	end
+
+})
+
+Tab:AddTextbox({
+
+	Name = "重力设置",
+
+	Default = "",
+
+	TextDisappear = true,
+
+	Callback = function(Value)
+
+		game.Workspace.Gravity = Value
+
+	end
+
+})
+Tab:AddButton({
 	Name = "管理员指令 开发者脚本",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
 	end
 })
 
-T:AddButton({
-	Name = "飞行GUI-V3",
-	Callback = function()
-		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
-	end
-})
-
-T:AddButton({
+Tab:AddButton({
 	Name = "踏空行走",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
 	end
 })
 
-T:AddToggle({
+Tab:AddToggle({
 	Name = "夜视",
 	Default = false,
 	Callback = function(Value)
@@ -119,7 +140,7 @@ T:AddToggle({
 	end
 })
 
-T:AddToggle({
+Tab:AddToggle({
 	Name = "穿墙",
 	Default = false,
 	Callback = function(Value)
@@ -144,6 +165,41 @@ T:AddToggle({
 			Noclip = false
 		end
 	end
+})	
+local Fear = Window:MakeTab({
+	Name = "恐鬼症",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+Fear:AddButton({
+
+	Name = "恐鬼症传送菜单",
+
+	Callback = function()
+	
+      	loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
+      	
+  	end
+
+})
+
+local bear = Window:MakeTab({
+	Name = "熊",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+bear:AddButton({
+
+	Name = "熊传送菜单",
+
+	Callback = function()
+	
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/231"))()
+      	
+  	end
+
 })
 
 OrionLib:Init()
