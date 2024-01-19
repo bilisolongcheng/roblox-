@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
 OrionLib:MakeNotification({
 	Name = "系统",
 	Content = "欢迎测试人员",
@@ -79,23 +79,4 @@ Tab:AddToggle({
 		end
 	end
 })
-
-local Fear = Window:MakeTab({
-	Name = "恐鬼症",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-
-Fear:AddButton({
-
-	Name = "恐鬼症传送菜单",
-
-	Callback = function()
-	
-      	loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
-      	
-  	end
-
-})
-
 OrionLib:Init()
