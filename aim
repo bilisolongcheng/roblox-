@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 OrionLib:MakeNotification({
 	Name = "系统",
 	Content = "欢迎测试人员",
@@ -53,30 +53,4 @@ Tab:AddToggle({
 	end
 })
 
-Tab:AddToggle({
-	Name = "穿墙",
-	Default = false,
-	Callback = function(Value)
-		if Value then
-			Noclip = true
-			Stepped = game.RunService.Stepped:Connect(function()
-				if Noclip == true then
-					for a, b in pairs(game.Workspace:GetChildren()) do
-						if b.Name == game.Players.LocalPlayer.Name then
-							for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
-								if v:IsA("BasePart") then
-									v.CanCollide = false
-								end
-							end
-						end
-					end
-				else
-					Stepped:Disconnect()
-				end
-			end)
-		else
-			Noclip = false
-		end
-	end
-})
 OrionLib:Init()
