@@ -122,13 +122,6 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "飞行GUI-V3",
-	Callback = function()
-		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/fx"), true))()
-	end
-})
-
-Tab:AddButton({
 	Name = "踏空行走",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
@@ -173,7 +166,6 @@ Tab:AddToggle({
 		end
 	end
 })
-
 Tab:AddButton({
 
 	Name = "转起来",
@@ -185,7 +177,6 @@ Tab:AddButton({
   	end
 
 })
-
 Tab:AddButton({
 	Name = "飞车",
 	Callback = function()
@@ -218,14 +209,14 @@ Fear:AddButton({
 })
 
 local bear = Window:MakeTab({
-	Name = "熊(阿尔法)",
+	Name = "熊",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
 })
 
 bear:AddButton({
 
-	Name = "熊(阿尔法)传送菜单",
+	Name = "熊传送菜单",
 
 	Callback = function()
 	
