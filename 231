@@ -24,6 +24,30 @@ Tab:AddButton({
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(407, 39, -26)
 	end 
 }) 
+Tab:AddButton({
+	Name = "传送至 旧大厅",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(520, 50, -16)
+	end 
+}) 
+Tab:AddButton({
+	Name = "传送至 R币商店",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 26, -114)
+	end 
+}) 
+Tab:AddButton({
+	Name = "传送至 彩蛋(分裂统治)",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(76, -101, -43)
+	end 
+}) 
+Tab:AddButton({
+	Name = "传送至 诡异(菜单)房间",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(436, 50, -4)
+	end 
+}) 
 local T = Window:MakeTab({
 	Name = "通用功能",
 	Icon = "rbxassetid://14481493145",
