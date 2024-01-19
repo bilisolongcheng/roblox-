@@ -12,10 +12,10 @@ local statement = Window:MakeTab({
 	Icon = "rbxassetid://14359155637",
 	PremiumOnly = false
 })
-statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
-statement:AddParagraph("使用教程", "无")
+statement:AddParagraph("使用教程", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
+statement:AddParagraph("更新时间", "2024.1.19")
 local Tab = Window:MakeTab({
-	Name = "路屋",
+	Name = "通用功能",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
 })
@@ -78,6 +78,42 @@ T:AddToggle({
 			Noclip = false
 		end
 	end
+})
+
+local Fear = Window:MakeTab({
+	Name = "恐鬼症",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+Fear:AddButton({
+
+	Name = "恐鬼症传送菜单",
+
+	Callback = function()
+	
+      	loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/3008"))()
+      	
+  	end
+
+})
+
+local transfer = Window:MakeTab({
+	Name = "熊",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+transfer:AddButton({
+
+	Name = "熊传送菜单",
+
+	Callback = function()
+	
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/231"))()
+      	
+  	end
+
 })
 
 OrionLib:Init()
