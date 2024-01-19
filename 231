@@ -21,7 +21,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "传送至 金币奖励",
 	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(401, 25, -27)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(407, 39, -26)
 	end 
 }) 
 local T = Window:MakeTab({
@@ -34,13 +34,6 @@ T:AddButton({
 	Name = "管理员指令 开发者脚本",
 	Callback = function()
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
-	end
-})
-
-T:AddButton({
-	Name = "飞行GUI-V3",
-	Callback = function()
-		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/fx"), true))()
 	end
 })
 
