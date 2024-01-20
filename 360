@@ -93,21 +93,6 @@ do
 
 
 
-    local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
-        Title = "选择",
-        Values = {"奇数是sb"，"TY是sb"},
-        Multi = false,
-        Default = 1,
-    })
-
-    Dropdown:SetValue("奇数是sb")
-
-    Dropdown:OnChanged(function(Value)
-        print(代码 changed:", Value)
-    end)
-
-
-    
     local MultiDropdown = Tabs.Main:AddDropdown("MultiDropdown", {
         Title = "Dropdown",
         Description = "You can select multiple values.",
