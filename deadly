@@ -1,1 +1,157 @@
 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+OrionLib:MakeNotification({
+	Name = "系统",
+	Content = "欢迎测试人员",
+	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
+	Time = 2
+})
+local Window = OrionLib:MakeWindow({Name = "致命公司", HidePremium = false, SaveConfig = true,IntroText = "by 龙城", ConfigFolder = "OrionTest"})
+
+local statement = Window:MakeTab({
+	Name = "警告",
+	Icon = "rbxassetid://14359155637",
+	PremiumOnly = false
+})
+statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
+statement:AddParagraph("使用教程", "删除机枪那些多个物品需要连续/n多次点击不然无法删完全")
+
+local T = Window:MakeTab({
+	Name = "通用功能",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+
+T:AddButton({
+	Name = "管理员指令 开发者脚本",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
+	end
+})
+
+T:AddButton({
+	Name = "飞行GUI-V3",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
+	end
+})
+
+T:AddButton({
+	Name = "踏空行走",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
+	end
+})
+
+T:AddToggle({
+	Name = "夜视",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			game.Lighting.Ambient = Color3.new(1, 1, 1)
+		else
+			game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end
+})
+
+T:AddToggle({
+	Name = "穿墙",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+			Noclip = true
+			Stepped = game.RunService.Stepped:Connect(function()
+				if Noclip == true then
+					for a, b in pairs(game.Workspace:GetChildren()) do
+						if b.Name == game.Players.LocalPlayer.Name then
+							for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+								if v:IsA("BasePart") then
+									v.CanCollide = false
+								end
+							end
+						end
+					end
+				else
+					Stepped:Disconnect()
+				end
+			end)
+		else
+			Noclip = false
+		end
+	end
+})
+
+local Tab = Window:MakeTab({
+	Name = "房子内",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "删除机枪",
+	Callback = function()
+		Workspace.Complex.Turret:Destroy()
+
+	end 
+})
+Tab:AddButton({
+	Name = "删除地雷",
+	Callback = function()
+		Workspace.Complex.Landmine:Destroy()
+
+	end 
+}
+local A1 = Window:MakeTab({
+	Name = "飞船",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+A1:AddButton({
+	Name = "删除飞船 大门",
+	Callback = function()
+		Workspace.ship.Build.Doors:Destroy()
+
+	end 
+}
+A1:AddButton({
+	Name = "删除飞船 控制大门机器",
+	Callback = function()
+		Workspace.ship.Build.DoorControl:Destroy()
+
+	end 
+}
+A1:AddButton({
+	Name = "删除飞船 充电器",
+	Callback = function()
+		Workspace.ship.Build.Charger:Destroy()
+
+	end 
+}
+A1:AddButton({
+	Name = "删除飞船 衣架",
+	Callback = function()
+		Workspace.ship.Build.Clothing:Destroy()
+
+	end 
+}
+A1:AddButton({
+	Name = "删除飞船 终端",
+	Callback = function()
+		Workspace.ship.Build.terminal:Destroy()
+
+	end 
+}
+local A2 = Window:MakeTab({
+	Name = "生物",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+A2:AddButton({
+	Name = "删除 弹簧人",
+	Callback = function()
+		Workspace.
+
+	end 
+}
+
+OrionLib:Init()
