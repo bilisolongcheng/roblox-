@@ -37,21 +37,21 @@ do
 
 
     Tabs.Main:AddButton({
-        Title = "Button",
-        Description = "Very important button",
+        Title = "按钮",
+        Description = "副名字",
         Callback = function()
             Window:Dialog({
-                Title = "Title",
-                Content = "This is a dialog",
+                Title = "主题名字",
+                Content = "副名字",
                 Buttons = {
                     {
-                        Title = "Confirm",
+                        Title = "确认",
                         Callback = function()
                             print("Confirmed the dialog.")
                         end
                     },
                     {
-                        Title = "Cancel",
+                        Title = "取消",
                         Callback = function()
                             print("Cancelled the dialog.")
                         end
@@ -63,7 +63,7 @@ do
 
 
 
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Toggle", Default = false })
+    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "复选", Default = false })
 
     Toggle:OnChanged(function()
         print("Toggle changed:", Options.MyToggle.Value)
@@ -74,8 +74,8 @@ do
 
     
     local Slider = Tabs.Main:AddSlider("Slider", {
-        Title = "Slider",
-        Description = "This is a slider",
+        Title = "滑块",
+        Description = "副名字",
         Default = 2,
         Min = 0,
         Max = 5,
@@ -86,7 +86,7 @@ do
     })
 
     Slider:OnChanged(function(Value)
-        print("Slider changed:", Value)
+        print("代码:", Value)
     end)
 
     Slider:SetValue(3)
@@ -94,16 +94,16 @@ do
 
 
     local Dropdown = Tabs.Main:AddDropdown("Dropdown", {
-        Title = "Dropdown",
-        Values = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"},
+        Title = "选择",
+        Values = {"奇数是sb"，"TY是sb"},
         Multi = false,
         Default = 1,
     })
 
-    Dropdown:SetValue("four")
+    Dropdown:SetValue("奇数是sb")
 
     Dropdown:OnChanged(function(Value)
-        print("Dropdown changed:", Value)
+        print(代码 changed:", Value)
     end)
 
 
@@ -220,32 +220,6 @@ do
     end)
 end
 
-
--- Addons:
--- SaveManager (Allows you to have a configuration system)
--- InterfaceManager (Allows you to have a interface managment system)
-
--- Hand the library over to our managers
-SaveManager:SetLibrary(Fluent)
-InterfaceManager:SetLibrary(Fluent)
-
--- Ignore keys that are used by ThemeManager.
--- (we dont want configs to save themes, do we?)
-SaveManager:IgnoreThemeSettings()
-
--- You can add indexes of elements the save manager should ignore
-SaveManager:SetIgnoreIndexes({})
-
--- use case for doing it this way:
--- a script hub could have themes in a global folder
--- and game configs in a separate folder per game
-InterfaceManager:SetFolder("FluentScriptHub")
-SaveManager:SetFolder("FluentScriptHub/specific-game")
-
-InterfaceManager:BuildInterfaceSection(Tabs.Settings)
-SaveManager:BuildConfigSection(Tabs.Settings)
-
-
 Window:SelectTab(1)
 
 Fluent:Notify({
@@ -254,6 +228,4 @@ Fluent:Notify({
     Duration = 8
 })
 
--- You can use the SaveManager:LoadAutoloadConfig() to load a config
--- which has been marked to be one that auto loads!
 SaveManager:LoadAutoloadConfig()
