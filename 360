@@ -27,4 +27,5 @@ do
         Duration = 5
     })
 
+SaveManager:LoadAutoloadConfig()
 
