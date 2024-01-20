@@ -41,17 +41,17 @@ do
         Description = "副名字",
         Callback = function()
             Window:Dialog({
-                Title = "主题名字",
-                Content = "副名字",
+                Title = "谁是sb",
+                Content = "认真选择",
                 Buttons = {
                     {
-                        Title = "确认",
+                        Title = "奇数",
                         Callback = function()
                             print("Confirmed the dialog.")
                         end
                     },
                     {
-                        Title = "取消",
+                        Title = "TY",
                         Callback = function()
                             print("Cancelled the dialog.")
                         end
