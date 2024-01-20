@@ -57,8 +57,8 @@ local statement = Window:MakeTab({
 
 statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生无法使用的情况，请明细")
 statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
-statement:AddLabel("更新内容 - 熊'(阿尔法)传送")
-statement:AddLabel("预计更新内容 - ...")
+statement:AddLabel("更新内容 - 致命公司 删除列表")
+statement:AddLabel("预计更新内容 - 致命公司 更新")
 
 local Tab = Window:MakeTab({
 	Name = "通用功能",
@@ -200,5 +200,15 @@ A1:AddButton({
 		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/main/231"), true))()
 	end
 })
-
+local A2 = Window:MakeTab({
+	Name = "致命公司",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+A2:AddButton({
+	Name = "致命公司 删除列表",
+	Callback = function()
+		loadstring(game:HttpGet(("https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/deadly"), true))()
+	end
+})
 OrionLib:Init()
