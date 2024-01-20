@@ -5,7 +5,7 @@ OrionLib:MakeNotification({
 	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
 	Time = 2
 })
-local Window = OrionLib:MakeWindow({Name = "熊(阿尔法)", HidePremium = false, SaveConfig = true,IntroText = "通用脚本", ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "熊(阿尔法)", HidePremium = false, SaveConfig = true,IntroText = "by 龙城", ConfigFolder = "OrionTest"})
 
 local statement = Window:MakeTab({
 	Name = "警告",
