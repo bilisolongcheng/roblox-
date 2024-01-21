@@ -1,4 +1,3 @@
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 OrionLib:MakeNotification({
 	Name = "系统",
@@ -14,7 +13,8 @@ local statement = Window:MakeTab({
 	PremiumOnly = false
 })
 statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
-statement:AddParagraph("使用教程", "删除机枪那些多个物品需要连续/n多次点击不然无法删完全")
+statement:AddParagraph("使用教程", "删除机枪.地雷是直接刷出来可以先删除")
+statement:AddParagraph("使用教程", "不是先刷出来删了也没有用，玩完一把删一次")
 
 local T = Window:MakeTab({
 	Name = "通用功能",
@@ -82,76 +82,135 @@ T:AddToggle({
 	end
 })
 
+local transfer = Window:MakeTab({
+	Name = "传送",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+transfer:AddButton({
+	Name = "传送至 大门",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(285.02020263671875, 37.149330139160156, -15.91282844543457)
+	end 
+})
+
+transfer:AddButton({
+	Name = "传送至 红门",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(294.98638916015625, 62.58048629760742, -62.462928771972656)
+	end 
+})
+transfer:AddButton({
+	Name = "传送至 飞船大门",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(62.45146942138672, 28.951217651367188, -9.000521659851074)
+	end 
+})
+transfer:AddButton({
+	Name = "传送至 公司出卖处",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(348.33197021484375, 259.6064758300781, -15302.6826171875)
+	end 
+})
+
+local people = Window:MakeTab({
+	Name = "怪物",
+	Icon = "rbxassetid://14481493145",
+	PremiumOnly = false
+})
+people:AddButton({
+	Name = "删除 线圈头",
+	Callback = function()
+	
+		Workspace.Complex.Coil:Destroy()
+
+	end 
+})
+people:AddButton({
+	Name = "删除 抱脸虫",
+	Callback = function()
+	
+		Workspace.Complex.Zhook:Destroy()
+
+	end 
+})
+people:AddButton({
+	Name = "删除 无眼狗",
+	Callback = function()
+	
+		Workspace.Complex.Dog:Destroy()
+
+	end 
+})
 local Tab = Window:MakeTab({
-	Name = "房子内",
+	Name = "建筑内",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
 })
 Tab:AddButton({
 	Name = "删除机枪",
 	Callback = function()
+	
 		Workspace.Complex.Turret:Destroy()
 
 	end 
 })
+
 Tab:AddButton({
 	Name = "删除地雷",
 	Callback = function()
+	
 		Workspace.Complex.Landmine:Destroy()
 
 	end 
-}
+})
+
 local A1 = Window:MakeTab({
 	Name = "飞船",
 	Icon = "rbxassetid://14481493145",
 	PremiumOnly = false
 })
+
 A1:AddButton({
-	Name = "删除飞船 大门",
+	Name = "删除 大门",
 	Callback = function()
-		Workspace.ship.Build.Doors:Destroy()
+	
+		Workspace.Ship.Build.Doors:Destroy()
 
 	end 
-}
-A1:AddButton({
-	Name = "删除飞船 控制大门机器",
-	Callback = function()
-		Workspace.ship.Build.DoorControl:Destroy()
-
-	end 
-}
-A1:AddButton({
-	Name = "删除飞船 充电器",
-	Callback = function()
-		Workspace.ship.Build.Charger:Destroy()
-
-	end 
-}
-A1:AddButton({
-	Name = "删除飞船 衣架",
-	Callback = function()
-		Workspace.ship.Build.Clothing:Destroy()
-
-	end 
-}
-A1:AddButton({
-	Name = "删除飞船 终端",
-	Callback = function()
-		Workspace.ship.Build.terminal:Destroy()
-
-	end 
-}
-local A2 = Window:MakeTab({
-	Name = "生物",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
 })
-A2:AddButton({
-	Name = "删除 弹簧人",
+A1:AddButton({
+	Name = "删除 大门控制器",
 	Callback = function()
-		Workspace.
+	
+		Workspace.Ship.Build.DoorControl:Destroy()
 
 	end 
-}
+})
+A1:AddButton({
+	Name = "删除 充电器",
+	Callback = function()
+	
+		Workspace.Ship.Build.Charger:Destroy()
+
+	end 
+})
+A1:AddButton({
+	Name = "删除 衣架",
+	Callback = function()
+	
+		Workspace.Ship.Build.Clothing:Destroy()
+
+	end 
+})
+A1:AddButton({
+	Name = "删除 终端(电脑)",
+	Callback = function()
+	
+		Workspace.Ship.Build.terminal:Destroy()
+
+	end 
+})
+
 
 OrionLib:Init()
