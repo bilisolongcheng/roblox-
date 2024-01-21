@@ -57,7 +57,7 @@ local statement = Window:MakeTab({
 
 statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生无法使用的情况，请明细")
 statement:AddLabel("GA团队中心作者ROBLOX用户名：dysolong")
-statement:AddLabel("更新内容 - 致命公司 删除列表")
+statement:AddLabel("更新内容 - 玩家进入提示 电脑键盘")
 statement:AddLabel("预计更新内容 - 致命公司 更新")
 
 local Tab = Window:MakeTab({
@@ -165,6 +165,18 @@ Tab:AddToggle({
 			Noclip = false
 		end
 	end
+})
+Tab:AddButton({
+	Name = "玩家进入提示",
+	Callback = function()
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/scriscriptsc/main/bbn.lua"))()
+  	end
+})
+Tab:AddButton({
+	Name = "电脑键盘",
+	Callback = function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+  	end    
 })
 Tab:AddButton({
 	Name = "飞车",
