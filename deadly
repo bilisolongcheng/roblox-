@@ -1,216 +1,243 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-OrionLib:MakeNotification({
-	Name = "系统",
-	Content = "欢迎测试人员",
-	Image = "rbxthumb://type=Asset&id=5107182114&w=150&h=150",
-	Time = 2
-})
-local Window = OrionLib:MakeWindow({Name = "致命公司", HidePremium = false, SaveConfig = true,IntroText = "by 龙城", ConfigFolder = "OrionTest"})
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
-local statement = Window:MakeTab({
-	Name = "警告",
-	Icon = "rbxassetid://14359155637",
-	PremiumOnly = false
-})
-statement:AddParagraph("警告", "脚本不在指定游戏执行，会发生传送别处的使用的情况，请明细")
-statement:AddParagraph("使用教程", "删除机枪.地雷是直接刷出来可以先删除")
-statement:AddParagraph("使用教程", "不是先刷出来删了也没有用，玩完一把删一次")
-
-local T = Window:MakeTab({
-	Name = "通用功能",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
+local Window = Fluent:CreateWindow({
+    Title = "致命公司" .. Fluent.Version,
+    SubTitle = "by 龙城",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(249, 144),
+    Acrylic = false, 
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
 })
 
-T:AddButton({
-	Name = "管理员指令 开发者脚本",
-	Callback = function()
-		loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
-	end
-})
+local T = {
+    Main = Window:AddTab({ Title = "通用功能", Icon = "rbxassetid://14380684950" }),
+}
 
-T:AddButton({
-	Name = "飞行GUI-V3",
-	Callback = function()
-		loadstring(game:HttpGet(("https://raw.githubusercontent.com/UWUBeiFeng/Scripts/main/FlyGUIV3.lua"), true))()
-	end
-})
+T.Main:AddButton({
+        Title = "管理员指令",
+        Description = "开发者指令",
+        Callback = function()
+            loadstring(game:HttpGet(("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"), true))()
+        end
+    })
+T.Main:AddButton({
+        Title = "飞行",
+        Description = "人物飞行",
+        Callback = function()
+           loadstring(game:HttpGet(('https://raw.githubusercontent.com/bilisolongcheng/roblox-/ASX/fx')))()
+        end
+    })
+T.Main:AddButton({
+        Title = "无限跳跃",
+        Description = "人物无限跳跃 人物跳跃固定高度",
+        Callback = function()
+            Window:Dialog({
+                Title = "无限跳跃",
+                Content = "2个版本 无限跳跃＝可以一直跳 踏空跳跃＝固定高度",
+                Buttons = {
+                    {
+                        Title = "无限跳跃",
+                        Callback = function()
+                            loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+                        end
+                    },
+                    {
+                        Title = "踏空跳跃",
+                        Callback = function()
+                            loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
+                        end
+                    }
+                }
+            })
+        end
+    })
+local Y = {
+    Main = Window:AddTab({ Title = "控制栏", Icon = "rbxassetid://14380684950" }),
+}
+Y.Main:AddButton({
+        Title = "飞船 大门",
+        Description = "控制飞船大门开关",
+        Callback = function()
+            Window:Dialog({
+                Title = "飞船 大门",
+                Content = "控制飞船大门开/关",
+                Buttons = {
+                    {
+                        Title = "开",
+                        Callback = function()
+                            local args = {
+    [1] = workspace.Ship.Build.DoorControl.hit,
+    [2] = true
+}
 
-T:AddButton({
-	Name = "踏空行走",
-	Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float"))()
-	end
-})
+game:GetService("ReplicatedStorage").Remotes.Door:InvokeServer(unpack(args))
+                        end
+                    },
+                    {
+                        Title = "关",
+                        Callback = function()
+                            local args = {
+    [1] = workspace.Ship.Build.DoorControl.hit,
+    [2] = false
+}
 
-T:AddToggle({
-	Name = "夜视",
-	Default = false,
-	Callback = function(Value)
-		if Value then
-			game.Lighting.Ambient = Color3.new(1, 1, 1)
-		else
-			game.Lighting.Ambient = Color3.new(0, 0, 0)
-		end
-	end
-})
+game:GetService("ReplicatedStorage").Remotes.Door:InvokeServer(unpack(args))
+                        end
+                    }
+                }
+            })
+        end
+    })
+Y.Main:AddButton({
+        Title = "飞船 启动起飞",
+        Description = "隔空拉拉杆",
+        Callback = function()
+            local args = {
+    [1] = workspace.Ship.Build.Stol.Lever.hitbox
+}
 
-T:AddToggle({
-	Name = "穿墙",
-	Default = false,
-	Callback = function(Value)
-		if Value then
-			Noclip = true
-			Stepped = game.RunService.Stepped:Connect(function()
-				if Noclip == true then
-					for a, b in pairs(game.Workspace:GetChildren()) do
-						if b.Name == game.Players.LocalPlayer.Name then
-							for i, v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
-								if v:IsA("BasePart") then
-									v.CanCollide = false
-								end
-							end
-						end
-					end
-				else
-					Stepped:Disconnect()
-				end
-			end)
-		else
-			Noclip = false
-		end
-	end
-})
+game:GetService("ReplicatedStorage").Remotes.Lever:InvokeServer(unpack(args))
+        end
+    })
+Y.Main:AddButton({
+        Title = "建筑 主门",
+        Description = "隔空开主门并进入",
+        Callback = function()
+            local args = {
+    [1] = false
+}
 
-local transfer = Window:MakeTab({
-	Name = "传送",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-transfer:AddButton({
-	Name = "传送至 大门",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(285.02020263671875, 37.149330139160156, -15.91282844543457)
-	end 
-})
+game:GetService("ReplicatedStorage").Remotes.Complex:FireServer(unpack(args))
+        end
+    })
+Y.Main:AddButton({
+        Title = "建筑 红门",
+        Description = "隔空开红门并进入",
+        Callback = function()
+            local args = {
+    [1] = true
+}
 
-transfer:AddButton({
-	Name = "传送至 红门",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(294.98638916015625, 62.58048629760742, -62.462928771972656)
-	end 
-})
-transfer:AddButton({
-	Name = "传送至 飞船大门",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(62.45146942138672, 28.951217651367188, -9.000521659851074)
-	end 
-})
-transfer:AddButton({
-	Name = "传送至 公司出卖处",
-	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(348.33197021484375, 259.6064758300781, -15302.6826171875)
-	end 
-})
+game:GetService("ReplicatedStorage").Remotes.Complex:FireServer(unpack(args))
+        end
+    })
+Y.Main:AddButton({
+        Title = "飞船 灯光",
+        Description = "飞船灯光开关",
+        Callback = function()
+            local args = {
+    [1] = workspace.Ship.Build.Switcher.hit
+}
 
-local people = Window:MakeTab({
-	Name = "怪物",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-people:AddButton({
-	Name = "删除 线圈头",
-	Callback = function()
-	
-		Workspace.Complex.Coil:Destroy()
+game:GetService("ReplicatedStorage").Remotes.LightSwitch:InvokeServer(unpack(args))
+        end
+    })
+Y.Main:AddButton({
+        Title = "飞船 显示屏控制器",
+        Description = "检查人物运动的显示器",
+        Callback = function()
+            game:GetService("ReplicatedStorage").Remotes.ChangePlayer:FireServer()
+        end
+    })
+local U = {
+    Main = Window:AddTab({ Title = "终端(电脑)", Icon = "rbxassetid://14380684950" }),
+}
+U.Main:AddButton({
+        Title = "切换 公司地图",
+        Description = "自动打代码",
+        Callback = function()
+            local args = {
+    [1] = "company"
+}
 
-	end 
-})
-people:AddButton({
-	Name = "删除 抱脸虫",
-	Callback = function()
-	
-		Workspace.Complex.Zhook:Destroy()
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
 
-	end 
-})
-people:AddButton({
-	Name = "删除 无眼狗",
-	Callback = function()
-	
-		Workspace.Complex.Dog:Destroy()
+local args = {
+    [1] = "yes"
+}
 
-	end 
-})
-local Tab = Window:MakeTab({
-	Name = "建筑内",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
-Tab:AddButton({
-	Name = "删除机枪",
-	Callback = function()
-	
-		Workspace.Complex.Turret:Destroy()
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
 
-	end 
-})
+        end
+    })
+U.Main:AddButton({
+        Title = "切换 地图一",
+        Description = "自动打代码",
+        Callback = function()
+            local args = {
+    [1] = "experimentation"
+}
 
-Tab:AddButton({
-	Name = "删除地雷",
-	Callback = function()
-	
-		Workspace.Complex.Landmine:Destroy()
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
 
-	end 
-})
+local args = {
+    [1] = "yes"
+}
 
-local A1 = Window:MakeTab({
-	Name = "飞船",
-	Icon = "rbxassetid://14481493145",
-	PremiumOnly = false
-})
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+        end
+    })
 
-A1:AddButton({
-	Name = "删除 大门",
-	Callback = function()
-	
-		Workspace.Ship.Build.Doors:Destroy()
+local R = {
+    Main = Window:AddTab({ Title = "传送", Icon = "rbxassetid://14380684950" }),
+}
+R.Main:AddButton({
+        Title = "传送至 主门",
+        Description = "tp到主门",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(285.02020263671875, 37.149330139160156, -15.91282844543457)
+        end
+    })
+R.Main:AddButton({
+        Title = "传送至 红门",
+        Description = "tp到红门",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(294.98638916015625, 62.58048629760742, -62.462928771972656)
+        end
+    })
+R.Main:AddButton({
+        Title = "传送至 飞船大门",
+        Description = "tp到飞船大门",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(62.45146942138672, 28.951217651367188, -9.000521659851074)
+        end
+    })
+R.Main:AddButton({
+        Title = "传送至 公司出卖处",
+        Description = "tp到公司出卖处",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(348.33197021484375, 259.6064758300781, -15302.6826171875)
+        end
+    })
 
-	end 
-})
-A1:AddButton({
-	Name = "删除 大门控制器",
-	Callback = function()
-	
-		Workspace.Ship.Build.DoorControl:Destroy()
+local E = {
+    Main = Window:AddTab({ Title = "删除", Icon = "rbxassetid://14380684950" }),
+}
+E.Main:AddButton({
+        Title = "删除 地雷",
+        Description = "删除游戏道具",
+        Callback = function()
+            Workspace.Complex.Landmine:Destroy()
+        end
+    })
+E.Main:AddButton({
+        Title = "删除 抱脸虫",
+        Description = "删除游戏道具",
+        Callback = function()
+            Workspace.Complex.Zhook:Destroy()
+        end
+    })
+E.Main:AddButton({
+        Title = "删除 无眼狗",
+        Description = "删除游戏道具",
+        Callback = function()
+            Workspace.Complex.Dog:Destroy()
+        end
+    })
 
-	end 
-})
-A1:AddButton({
-	Name = "删除 充电器",
-	Callback = function()
-	
-		Workspace.Ship.Build.Charger:Destroy()
-
-	end 
-})
-A1:AddButton({
-	Name = "删除 衣架",
-	Callback = function()
-	
-		Workspace.Ship.Build.Clothing:Destroy()
-
-	end 
-})
-A1:AddButton({
-	Name = "删除 终端(电脑)",
-	Callback = function()
-	
-		Workspace.Ship.Build.terminal:Destroy()
-
-	end 
-})
-
-
-OrionLib:Init()
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:LoadAutoloadConfig()
