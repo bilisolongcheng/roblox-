@@ -6,15 +6,15 @@ local Window = Fluent:CreateWindow({
     Title = "致命公司" .. Fluent.Version,
     SubTitle = "by 龙城",
     TabWidth = 160,
-    Size = UDim2.fromOffset(340, 210),
+    Size = UDim2.fromOffset(320, 220),
     Acrylic = false, 
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl
 })
-
 local T = {
     Main = Window:AddTab({ Title = "通用功能", Icon = "rbxassetid://14380684950" }),
 }
+local Options = Fluent.Options
 
 T.Main:AddButton({
         Title = "管理员指令",
@@ -103,6 +103,13 @@ game:GetService("ReplicatedStorage").Remotes.Lever:InvokeServer(unpack(args))
         end
     })
 Y.Main:AddButton({
+        Title = "飞船 传送按钮",
+        Description = "传送器按钮",
+        Callback = function()
+            game:GetService("ReplicatedStorage").Remotes.Teleport:FireServer()
+        end
+    })
+Y.Main:AddButton({
         Title = "建筑 主门",
         Description = "隔空开主门并进入",
         Callback = function()
@@ -135,6 +142,26 @@ Y.Main:AddButton({
 game:GetService("ReplicatedStorage").Remotes.LightSwitch:InvokeServer(unpack(args))
         end
     })
+Y.Main:AddButton({
+        Title = "飞船 灯光循环",
+        Description = "飞船灯光循环开关",
+        Callback = function()
+            Fluent:Notify({
+        Title = "系统",
+        Content = "循环次数",
+        SubContent = "正在循环30次",
+        Duration = 3
+        })
+        for i = 1, 30 do
+    local args = {
+    [1] = workspace.Ship.Build.Switcher.hit
+}
+
+game:GetService("ReplicatedStorage").Remotes.LightSwitch:InvokeServer(unpack(args))
+end
+        end
+    })
+    
 Y.Main:AddButton({
         Title = "飞船 显示屏控制器",
         Description = "检查人物运动的显示器",
@@ -178,6 +205,108 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+        end
+    })
+U.Main:AddButton({
+        Title = "购买 音响",
+        Description = "自动打代码",
+        Callback = function()
+        local args = {
+    [1] = "boombox"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))       
+local args = {
+    [1] = "yes"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+
+        end
+    })
+U.Main:AddButton({
+        Title = "购买 手电筒",
+        Description = "自动打代码",
+        Callback = function()
+        local args = {
+    [1] = "flashlight"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+local args = {
+    [1] = "yes"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+
+        end
+    })
+    U.Main:AddButton({
+        Title = "购买 手电筒pro",
+        Description = "自动打代码",
+        Callback = function()
+                    local args = {
+    [1] = "pro"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+local args = {
+    [1] = "yes"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+
+        end
+    })
+U.Main:AddButton({
+        Title = "购买 传送器",
+        Description = "自动打代码",
+        Callback = function()
+        local args = {
+    [1] = "teleporter"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))   
+local args = {
+    [1] = "yes"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+
+        end
+    })
+U.Main:AddButton({
+        Title = "购买 马桶装饰",
+        Description = "自动打代码",
+        Callback = function()
+        local args = {
+    [1] = "toilet"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args)) 
+local args = {
+    [1] = "yes"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+
+        end
+    })
+U.Main:AddButton({
+        Title = "购买 圣诞灯光装饰",
+        Description = "自动打代码",
+        Callback = function()
+        local args = {
+    [1] = "cozy lights"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+local args = {
+    [1] = "yes"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Execute:InvokeServer(unpack(args))
+
         end
     })
 
